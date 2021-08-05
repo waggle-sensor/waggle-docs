@@ -4,14 +4,15 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Sage',
-  tagline: 'Dinosaurs are cool',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  tagline: 'Cyberinfrastructure for AI at the Edge',
+  url: 'https://sagecontinuum.github.io',
+  baseUrl: '/sage-docs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/sage-favicon.png',
   organizationName: 'sagecontinuum',
-  projectName: 'sage',
+  projectName: 'sage-docs',
+  trailingSlash: false,
   themeConfig: {
     navbar: {
       title: 'Sage',
@@ -78,13 +79,13 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/sagecontinuum/sage-docs/edit/master/website/',
+            'https://github.com/sagecontinuum/sage-docs/edit/master/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/sagecontinuum/sage-docs/edit/master/website/blog/',
+            'https://github.com/sagecontinuum/sage-docs/edit/master/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

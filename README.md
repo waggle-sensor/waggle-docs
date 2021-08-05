@@ -22,4 +22,9 @@ Generate static content into the `build` directory:
 yarn build
 ```
 
+## GitHub Pages Deploy
+
+GIT_USER=<GITHUB_USERNAME> yarn deploy
+
+
 
