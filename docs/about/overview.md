@@ -5,7 +5,7 @@ sidebar_position: 1
 
 # Sage: A distributed software-defined sensor network.
 
-## Overview
+## What is Sage?
 The [Sage project](https://sagecontinuum.org/) will design and build a new kind of national-scale reusable cyberinfrastructure to enable AI at the edge.
 
 Geographically distributed sensor systems that include cameras, microphones, and weather and air quality stations can generate such large volumes of data that fast and efficient analysis is best performed by an embedded computer connected directly to the sensor. Sage will explore new techniques for applying machine learning algorithms to data from such intelligent sensors and then build reusable software that can run programs within the embedded computer and transmit the results over the network to central computer servers. Distributed, intelligent sensor networks that can collect and analyze data are essential for scientists seeking to understand the impacts of global urbanization, natural disasters such as flooding and wildfires, and climate change on natural ecosystems and city infrastructure.
@@ -18,10 +18,44 @@ Sage will develop open source computer code and provide open hardware design doc
 
 The Sage project draws a lot of software and hardware from the [Waggle AI@Edge](https://github.com/waggle-sensor/waggle) platform.
 
-### [Sage Architecture Overview](./arch-overview)
-![Figure 1: A high-level overview of the Sage Cyber-infrastructure](./images/SAGE_CI.jpg)
+## Who are The Users of Sage?
 
+While anyone can be a student of Sage the most frequent users will be:
 
-### [User Interaction with Sage](./user-interaction.md)
-![Figure 2: A high-level overview of user interation with Sage Cyber-infrastructure](./images/SAGE_Use.jpg)
+- Domain Scientist interested in developing edge AI applications
+- Users Interested in Sage Datasets
+- Cyber-infrastructure researchers interested in platform research
+- Domain Scientist interest in adding new sensors, and deploying Sage nodes to answer specific science questions
 
+## How do I use Sage?
+
+With a basic understanding of what the [Sage project](https://sagecontinuum.org/) is, the next question is how does Sage work and how can I use Sage? This depends on your desired interaction interest. 
+
+Sage in it's simpliest form consists of edge compute applications with access to sensor (ex. camera) data. These edge applications then produce their own data (ex. inferances) and upload the results to a cloud database. This cloud database can be accessed directly and/or additional compute can be performed on the cloud data. 
+
+![Sage User Interaction](./images/SAGE_Interact.png)
+
+The entry-point into learning about your interaction with Sage can be best directed by getting answers (by following the links) to the question(s) you are most interested in.
+
+[How do I integrate my sensor?]()
+- Do you have a new sensor that you want to write an edge application for?
+- Want to learn about the sensors that Sage already supports?
+
+[How do I compute at the edge?]()
+- Want to know to create an edge compute application?
+- Want to know how your edge application can get access to edge sensor data?
+- Want to share my edge compute data with other edge applictions?
+- Want to know how to upload data it to the cloud?
+
+[How do I access and use data?]()
+- Want to learn about how Sage data is stored/organized?
+- Do you have data that is up in the cloud and want to know how to access it?
+
+[How do I compute in the cloud?]()
+- Want to know how to autonmously react to edge produced data?
+- Want to know how to trigger an HPC event?
+- Wnat to get a text message when your edge application does something cool?
+
+## How is the Sage Cyber-infrastructure Architected?
+
+If you are interested in learning more about how the Sage Cyber-infrastructure works you can head on over to the [Sage Architecture Overview](./arch-overview).
