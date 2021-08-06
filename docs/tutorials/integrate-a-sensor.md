@@ -2,6 +2,6 @@
 sidebar_position: 3
 ---
 
-# Integrating a Sensor
+# How Do I Integrate My Sensor?
 
 "Integrating a Sensor" content could go here

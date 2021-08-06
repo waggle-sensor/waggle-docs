@@ -37,25 +37,25 @@ Sage in it's simpliest form consists of edge compute applications with access to
 
 The entry-point into learning about your interaction with Sage can be best directed by getting answers (by following the links) to the question(s) you are most interested in.
 
-[How do I integrate my sensor?]()
+[How do I integrate my sensor?](../tutorials/integrate-a-sensor.md)
 - Do you have a new sensor that you want to write an edge application for?
 - Want to learn about the sensors that Sage already supports?
 
-[How do I compute at the edge?]()
+[How do I compute at the edge?](../tutorials/compute-at-edge.md)
 - Want to know to create an edge compute application?
 - Want to know how your edge application can get access to edge sensor data?
 - Want to share my edge compute data with other edge applictions?
 - Want to know how to upload data it to the cloud?
 
-[How do I access and use data?]()
+[How do I access and use data?](../tutorials/accessing-data.md)
 - Want to learn about how Sage data is stored/organized?
 - Do you have data that is up in the cloud and want to know how to access it?
 
-[How do I compute in the cloud?]()
+[How do I compute in the cloud?](../tutorials/cloud-compute.md)
 - Want to know how to autonmously react to edge produced data?
 - Want to know how to trigger an HPC event?
 - Wnat to get a text message when your edge application does something cool?
 
 ## How is the Sage Cyber-infrastructure Architected?
 
-If you are interested in learning more about how the Sage Cyber-infrastructure works you can head on over to the [Sage Architecture Overview](./arch-overview).
+If you are interested in learning more about how the Sage Cyber-infrastructure works you can head on over to the [Sage Architecture Overview](./arch-overview.md).
