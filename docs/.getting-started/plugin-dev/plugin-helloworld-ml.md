@@ -1,5 +1,6 @@
 ---
 sidebar-label: Hello World Plugin
+hide_title: true
 ---
 
 # Hello World Plugin

@@ -7,11 +7,6 @@ Check back later for new tutorials about Sage.
 * [The Format of a Sage Tutorial/Doc](./writing-docs/doc-format.md)
 * [Using Markdown](./writing-docs/using-markdown.md)
 
-## Installation
-
-```console
-yarn install
-```
 
 ## Local Development
 

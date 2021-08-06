@@ -19,16 +19,29 @@ module.exports = {
       logo: {
         alt: 'Sage Logo',
         src: 'img/logo.png',
-        href: 'https://portal.sagecontinuum.org/'
+        href: '/docs/about/overview',
       },
       items: [
         {
-          type: 'doc',
-          docId: 'about',
+          to: '/docs/about/overview',
           position: 'left',
-          label: 'Documentation',
+          label: 'About',
         },
-        {to: '/blog', label: 'News', position: 'left'},
+        {
+          to: '/docs/tutorials/accessing-data',
+          position: 'left',
+          label: 'Tutorials',
+        },
+        {
+          to: '/blog',
+          label: 'News',
+          position: 'left'
+        },
+        {
+          to: 'https://portal.sagecontinuum.org',
+          label: 'Sage Portal',
+          position: 'left'
+        },
         /*
         {
           href: 'https://github.com/facebook/docusaurus',

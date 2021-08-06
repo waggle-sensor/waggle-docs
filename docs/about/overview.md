@@ -1,11 +1,7 @@
 ---
-sidebar_label: About
+sidebar_label: Overview
 sidebar_position: 1
 ---
-
-
-[Sage_CI_HL]: https://raw.githubusercontent.com/sagecontinuum/sage/master/resources/images/SAGE_CI.jpg "Sage CI Arch"
-[Sage_CI_Use]: https://raw.githubusercontent.com/sagecontinuum/sage/master/resources/images/SAGE_Use.jpg "Sage CI Use"
 
 # Sage: A distributed software-defined sensor network.
 
@@ -22,10 +18,10 @@ Sage will develop open source computer code and provide open hardware design doc
 
 The Sage project draws a lot of software and hardware from the [Waggle AI@Edge](https://github.com/waggle-sensor/waggle) platform.
 
-## [Sage Architecture Overview](https://github.com/sagecontinuum/sage/blob/master/architecture_overview.md)
-![Figure 1: A high-level overview of the Sage Cyber-infrastructure][Sage_CI_HL]
+### [Sage Architecture Overview](./arch-overview)
+![Figure 1: A high-level overview of the Sage Cyber-infrastructure](https://raw.githubusercontent.com/sagecontinuum/sage/master/resources/images/SAGE_CI.jpg)
 
 
-## [User Interaction with Sage](https://github.com/sagecontinuum/sage/blob/master/user_interaction.md)
-![Figure 2: A high-level overview of user interation with Sage Cyber-infrastructure][Sage_CI_Use]
+### [User Interaction with Sage](./user-interaction.md)
+![Figure 2: A high-level overview of user interation with Sage Cyber-infrastructure](https://raw.githubusercontent.com/sagecontinuum/sage/master/resources/images/SAGE_Use.jpg)
 
