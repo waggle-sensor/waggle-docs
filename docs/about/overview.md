@@ -18,7 +18,7 @@ Sage will develop open source computer code and provide open hardware design doc
 
 The Sage project draws a lot of software and hardware from the [Waggle AI@Edge](https://github.com/waggle-sensor/waggle) platform.
 
-## Who are The Users of Sage?
+## Who are the users of Sage?
 
 While anyone can be a student of Sage the most frequent users will be:
 
@@ -54,8 +54,8 @@ The entry-point into learning about your interaction with Sage can be best direc
 [How do I compute in the cloud?](../tutorials/cloud-compute.md)
 - Want to know how to autonmously react to edge produced data?
 - Want to know how to trigger an HPC event?
-- Wnat to get a text message when your edge application does something cool?
+- Want to get a text message when your edge application does something cool?
 
-## How is the Sage Cyber-infrastructure Architected?
+## How is the Sage cyber-infrastructure architected?
 
 If you are interested in learning more about how the Sage Cyber-infrastructure works you can head on over to the [Sage Architecture Overview](./arch-overview.md).
