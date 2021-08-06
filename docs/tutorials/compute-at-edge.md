@@ -1,6 +1,5 @@
 ---
-sidebar_label: Computing at the Edge
-position: 1
+sidebar_position: 2
 ---
 
 # Computing at the Edge

@@ -1,6 +1,5 @@
 ---
-sidebar_label: Integrating a Sensor
-position: 3
+sidebar_position: 3
 ---
 
 # Integrating a Sensor

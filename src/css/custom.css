@@ -73,9 +73,9 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 
 /* speed up animations */
 ul.menu__list {
-  transition: height 150ms ease-in-out 0s !important;
+  transition: height 100ms ease-in-out 0s !important;
 }
 
 .menu__link--sublist:after {
-  transition: 150ms linear;
+  transition: 100ms linear !important;
 }

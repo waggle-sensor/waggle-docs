@@ -1,6 +1,5 @@
 ---
-sidebar_label: Accessing and Using Data
-position: 2
+sidebar_position: 1
 ---
 
 # Accessing and Using Data
