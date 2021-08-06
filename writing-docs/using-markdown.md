@@ -1,6 +1,3 @@
----
-sidebar_position: 4
----
 
 # Markdown Features
 
@@ -11,14 +8,15 @@ Docusaurus supports **[Markdown](https://daringfireball.net/projects/markdown/sy
 Markdown documents have metadata at the top called [Front Matter](https://jekyllrb.com/docs/front-matter/):
 
 ```text title="my-doc.md"
-// highlight-start
 ---
 id: my-doc-id
 title: My document title
 description: My document description
+keywords:
+  - example
+  - keyword
 slug: /my-custom-url
 ---
-// highlight-end
 
 ## Markdown heading
 
@@ -46,10 +44,10 @@ Regular Markdown images are supported.
 Add an image at `static/img/Sage.png` and display it in Markdown:
 
 ```md
-![Sage logo](/img/logo.png)
+![Sage logo](../static/img/logo.png)
 ```
 
-![Sage logo](/img/logo.png)
+![Sage logo](../static/img/logo.png)
 
 ## Code Blocks
 
@@ -81,60 +79,35 @@ Docusaurus has a special syntax to create admonitions and callouts:
 
     :::
 
-:::tip My tip
 
-Use this awesome feature option
 
-:::
 
-:::danger Take care
+:::note
 
-This action is dangerous
+Some **content** with _markdown_ `syntax`. Check [this `api`](#).
 
 :::
 
-## MDX and React Components
+:::tip
 
-[MDX](https://mdxjs.com/) can make your documentation more **interactive** and allows using any **React components inside Markdown**:
+Some **content** with _markdown_ `syntax`. Check [this `api`](#).
 
-```jsx
-export const Highlight = ({children, color}) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: '20px',
-      color: '#fff',
-      padding: '10px',
-      cursor: 'pointer',
-    }}
-    onClick={() => {
-      alert(`You clicked the color ${color} with label ${children}`)
-    }}>
-    {children}
-  </span>
-);
+:::
 
-This is <Highlight color="#25c2a0">Docusaurus green</Highlight> !
+:::info
 
-This is <Highlight color="#1877F2">Facebook blue</Highlight> !
-```
+Some **content** with _markdown_ `syntax`. Check [this `api`](#).
 
-export const Highlight = ({children, color}) => (
-  <span
-    style={{
-      backgroundColor: color,
-      borderRadius: '20px',
-      color: '#fff',
-      padding: '10px',
-      cursor: 'pointer',
-    }}
-    onClick={() => {
-      alert(`You clicked the color ${color} with label ${children}`);
-    }}>
-    {children}
-  </span>
-);
+:::
 
-This is <Highlight color="#25c2a0">Docusaurus green</Highlight> !
+:::caution
 
-This is <Highlight color="#1877F2">Facebook blue</Highlight> !
+Some **content** with _markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
+:::danger
+
+Some **content** with _markdown_ `syntax`. Check [this `api`](#).
+
+:::
