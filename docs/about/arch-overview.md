@@ -4,7 +4,7 @@ sidebar_position: 2
 ---
 
 # Architecture
-![Figure 1: A high-level overview of the Sage Cyber-infrastructure](https://raw.githubusercontent.com/sagecontinuum/sage/master/resources/images/SAGE_CI.jpg)
+![Figure 1: A high-level overview of the Sage Cyber-infrastructure](./images/SAGE_CI.jpg)
 
 The Sage project will design and build a new kind of national-scale reusable cyber-infrastructure to enable AI at the edge.
 The illustration above shows a high-level view of the Sage CI architecture and enumerates the various software services,

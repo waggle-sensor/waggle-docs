@@ -19,9 +19,9 @@ Sage will develop open source computer code and provide open hardware design doc
 The Sage project draws a lot of software and hardware from the [Waggle AI@Edge](https://github.com/waggle-sensor/waggle) platform.
 
 ### [Sage Architecture Overview](./arch-overview)
-![Figure 1: A high-level overview of the Sage Cyber-infrastructure](https://raw.githubusercontent.com/sagecontinuum/sage/master/resources/images/SAGE_CI.jpg)
+![Figure 1: A high-level overview of the Sage Cyber-infrastructure](./images/SAGE_CI.jpg)
 
 
 ### [User Interaction with Sage](./user-interaction.md)
-![Figure 2: A high-level overview of user interation with Sage Cyber-infrastructure](https://raw.githubusercontent.com/sagecontinuum/sage/master/resources/images/SAGE_Use.jpg)
+![Figure 2: A high-level overview of user interation with Sage Cyber-infrastructure](./images/SAGE_Use.jpg)
 

@@ -4,9 +4,8 @@ sidebar_position: 3
 ---
 
 # User Interaction with Sage
-[Sage_CI_Use]: https://raw.githubusercontent.com/sagecontinuum/sage/master/resources/images/SAGE_Use.jpg "Sage CI Use"
 
-![Figure 1: A high-level overview of user interation with Sage Cyber-infrastructure][Sage_CI_Use]
+![Figure 1: A high-level overview of user interation with Sage Cyber-infrastructure](./images/SAGE_Use.jpg)
 
 ## Who are the users?
 
