@@ -2,6 +2,6 @@
 sidebar_position: 4
 ---
 
-# Compute In The Cloud
+# Compute in the Cloud
 
 "Cloud Computing" content could go here
