@@ -41,13 +41,12 @@ Let's see how to [Create a document](./create-a-document.md).
 
 Regular Markdown images are supported.
 
-Add an image at `static/img/Sage.png` and display it in Markdown:
-
 ```md
-![Sage logo](../static/img/logo.png)
+  ![user interaction](../docs/about/images/SAGE_Interact.png)
 ```
 
-![Sage logo](../static/img/logo.png)
+![ user interaction](../docs/about/images/SAGE_Interact.png)
+
 
 ## Code Blocks
 

@@ -63,6 +63,10 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   opacity: 0.6;
 }
 
+html[data-theme='dark'] .navbar__link--active  {
+  color: #fff;
+}
+
 /*
  * sidebar
  */

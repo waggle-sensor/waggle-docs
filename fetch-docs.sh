@@ -9,9 +9,6 @@ curl https://raw.githubusercontent.com/sagecontinuum/sage/master/README.md \
 curl https://raw.githubusercontent.com/sagecontinuum/sage/master/architecture_overview.md \
 --create-dirs -o docs/about/arch-overview.md
 
-curl https://raw.githubusercontent.com/sagecontinuum/sage/master/user_interaction.md \
---create-dirs -o docs/about/user-interaction.md
-
 curl https://raw.githubusercontent.com/sagecontinuum/sage/master/resources/images/SAGE_CI.jpg \
 --create-dirs -o docs/about/images/SAGE_CI.jpg
 
