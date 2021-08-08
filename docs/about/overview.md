@@ -37,7 +37,7 @@ Sage in it's simpliest form consists of edge compute applications with access to
 
 The entry-point into learning about your interaction with Sage can be best directed by getting answers (by following the links) to the question(s) you are most interested in.
 
-[How do I integrate my sensor?](../tutorials/integrate-a-sensor.md)
+[How do I integrate my sensor?](../tutorials/integrate-my-sensor.md)
 - Do you have a new sensor that you want to write an edge application for?
 - Want to learn about the sensors that Sage already supports?
 
