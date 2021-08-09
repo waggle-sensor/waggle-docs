@@ -41,10 +41,6 @@ All configuration changes, whether they be software updates or new edge computin
 #### [Sage Lambda Triggers (SLT)](https://github.com/sagecontinuum/slt)
 The SLT provides a framework for two kinds of triggers: From-Edge and To-Edge. A value or message from a Waggle edge node, delivered to Beehive, can be used to trigger a lambda function -- for example, if high wind velocity is detected, a function could be triggered to determine how to reconfigure sensors or launch a computation or send an alert. Similarly, an HPC calculation or cloud-based data analysis could trigger an API call to the SES and send a notification to a Waggle edge node -- for example to request scheduling of new edge computations or reposition mobile assets.
 
-#### [Waggle Edge Stack (WES)](https://github.com/sagecontinuum/wes)
-
-The WES includes the operating system image and Waggle services running on the Node Controller and Edge Processors as well as the ML run-time libraries and tools. It also manages cybersecurity, certificate management, and manages system resources, such as power, memory, and cores. It constantly updates its state with the cloud server to fetch and perform any task scheduled from SES.
-
 #### [Cloud Training Software Stack (CTSS)](https://github.com/sagecontinuum/ctss)
 CTSS will provide interfaces (CTSS Training Environment and CTSS API Client) and documentation with end-to-end examples for users to allow them to build and bundle the components necessary to test on a Virtual Waggle and then on a Sage Node. It can be run on the cloud or as a downloadable software.
 
