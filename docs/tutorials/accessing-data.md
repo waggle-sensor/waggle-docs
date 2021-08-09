@@ -16,9 +16,9 @@ Currently the SAGE sensor database contains data such as:
 
 Data can be accessed via "data bundles"  or by API calls:
 
-Data bundles are static collections of sensor data which includes all metadata needed to understand how the data was generated. Data bundles are targeted at scientists that want to be able to cite data they used in their publications. To find data bundles, please use the Sage commons web portal (link)
+**Data bundles** are static collections of sensor data which includes all metadata needed to understand how the data was generated. Data bundles are targeted at scientists that want to be able to cite data they used in their publications. To find data bundles, please use the Sage commons web portal (link)
 
-The Sage sensor query API allows for flexible access to historical and "real time" data in Sage.  This example shows how to retrieve data the latest data from a specific sensor:
+The **Sage sensor query API** allows for flexible access to historical and "real time" data in Sage.  This example shows how to retrieve data the latest data from a specific sensor:
 
 ```bash
 curl -H 'Content-Type: application/json' https://sdr.sagecontinuum.org/api/v1/query -d '
