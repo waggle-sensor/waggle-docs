@@ -45,8 +45,7 @@ More details on how to use the query API can be found [here](https://github.com/
 
 # Data model
 
-A detailed description of the data model can be found [here]
-(https://github.com/waggle-sensor/waggle-beehive-v2/blob/main/docs/querying-measurements.md#data-model).
+A detailed description of the data model can be found [here](https://github.com/waggle-sensor/waggle-beehive-v2/blob/main/docs/querying-measurements.md#data-model).
 
 
 # Large files (i.e. training data)
