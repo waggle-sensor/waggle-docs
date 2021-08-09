@@ -15,7 +15,7 @@ The SAGE node is designed to accommodate sensors commonly used to support enviro
 _NOTE: not all SAGE nodes have the same set of sensors, and the sensor configuration depends on what to capture from the environment once the node is deployed_
 - [BME680](https://sage-commons.sdsc.edu/dataset/bme680): temperature, humidity, pressure, and gas
 - [RG-15](https://sage-commons.sdsc.edu/dataset/rg-15): rainfall
-- [ETS ML1-WS](missing_link): 20-16 kHz microphone recording sound
+- [ETS ML1-WS](https://www.a1securitycameras.com/ets-ml1-ws.html): 20-16 kHz microphone recording sound
 - [XNV-8080R](https://sage-commons.sdsc.edu/dataset/xnv-8080r): 5 MP camera with 92.1 degree horizontal and 67.2 degree vertical angle view
 - [XNV-8082R](https://sage-commons.sdsc.edu/dataset/xnv-8082r):  6 MP camera with 114 degree horizontal and 62 degree vertical angle view
 - [XNF-8010RV](https://sage-commons.sdsc.edu/dataset/xnf-8010rv): 6 MP fisheye camera with 192 degree horizontal and vertical angle view
