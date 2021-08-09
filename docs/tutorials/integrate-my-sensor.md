@@ -9,7 +9,7 @@ A SAGE sensor is an entity that produces measurements of a phenomenon and that h
 In general, SAGE sensors are desinged to be accessible from any user applications running on the SAGE node that hosts the sensors, but can be limited its access to groups and personnel. Ideally, those SAGE sensors form and support SAGE ecosystem where sensor measurements are integrated and used for higher level computation and complex decision making.
 
 ## SAGE Physical sensors
-![Figure 1: Sensors of SAGE node](./images/SAGE_Node.jpg)
+![Figure 1: Sensors of SAGE node](./images/Sage_Node.jpg)
 The SAGE node is designed to accommodate sensors commonly used to support environmental science, but not limited to host other sensors. The currently supported sensors are,
 
 _NOTE: not all SAGE nodes have the same set of sensors, and the sensor configuration depends on what to capture from the environment once the node is deployed_
