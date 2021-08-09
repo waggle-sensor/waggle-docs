@@ -22,16 +22,16 @@ The Sage project draws a lot of software and hardware from the [Waggle AI@Edge](
 
 While anyone can be a student of Sage the most frequent users will be:
 
-- Domain Scientist interested in developing edge AI applications
-- Users Interested in Sage Datasets
-- Cyber-infrastructure researchers interested in platform research
-- Domain Scientist interest in adding new sensors, and deploying Sage nodes to answer specific science questions
+- Domain scientist interested in developing edge AI applications.
+- Users interested in Sage datasets.
+- Cyber-infrastructure researchers interested in platform research.
+- Domain scientist interest in adding new sensors and deploying Sage nodes to answer specific science questions.
 
 ## How do I use Sage?
 
 With a basic understanding of what the [Sage project](https://sagecontinuum.org/) is, the next question is how does Sage work and how can I use Sage? This depends on your desired interaction interest. 
 
-Sage in it's simpliest form consists of edge compute applications with access to sensor (ex. camera) data. These edge applications then produce their own data (ex. inferances) and upload the results to a cloud database. This cloud database can be accessed directly and/or additional compute can be performed on the cloud data. 
+Sage, in it's simplest form, consists of edge compute applications which process data (ex. sensor readings, camera images, audio recordings, etc). These edge applications then produce their own data (ex. inferences) and upload the results to a cloud database. This cloud database can be accessed directly and/or additional compute can be performed on the cloud data.
 
 ![Sage User Interaction](./images/SAGE_Interact.png)
 
@@ -42,10 +42,10 @@ The entry-point into learning about your interaction with Sage can be best direc
 - Want to learn about the sensors that Sage already supports?
 
 [How do I compute at the edge?](../tutorials/compute-at-edge.md)
-- Want to know to create an edge compute application?
+- Want to know how to create an edge compute application?
 - Want to know how your edge application can get access to edge sensor data?
 - Want to share my edge compute data with other edge applictions?
-- Want to know how to upload data it to the cloud?
+- Want to know how to upload data to the cloud?
 
 [How do I access and use data?](../tutorials/accessing-data.md)
 - Want to learn about how Sage data is stored/organized?
