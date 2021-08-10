@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Access and Use Data
 
-
+![Data Movement](./images/data_movement.svg)
 
 Currently the SAGE sensor database contains data such as:
 
