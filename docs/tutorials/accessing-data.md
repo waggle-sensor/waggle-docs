@@ -9,7 +9,7 @@ sidebar_position: 3
 Currently the SAGE sensor database contains data such as:
 
 - relative humidity, barometric pressure, ambient temperature and gas (VOC) [BME680](https://www.bosch-sensortec.com/products/environmental-sensors/gas-sensors/bme680/)
-- rainfall measurements [(Hydreon RG-15)](https://store.hydreon.com/RG-15.html) 
+- rainfall measurements [(Hydreon RG-15)](https://sage-commons.sdsc.edu/dataset/rg-15) 
 - AI-based cloud coverage estimation from camera images
 - AI-based object counts from camera images
 - (system data of the nodes, free disk space etc.)
@@ -61,6 +61,8 @@ Sensor data from nodes that comes in numerical or textual form (e.g. temperature
   }
 }
 ```
+
+
 
 # TODO 
 
