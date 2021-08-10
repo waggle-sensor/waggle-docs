@@ -18,19 +18,20 @@ Plugins fit into the wider Sage infrastructure by being added to the [Edge Code 
 
 ## Developing new edge applications
 
-Writing a new edge applications (i.e. __plugin__) typically consists of the following steps:
+Writing a new edge applications (i.e. __plugin__) consists of the following steps:
 
 1. Write plugin code.
-2. Submit plugin code to the [Edge Code Repository](https://portal.sagecontinuum.org).
-3. Schedule a plugin for deployment.
+2. Submit plugin to the [Edge Code Repository](https://portal.sagecontinuum.org).
+3. Schedule plugin for deployment.
+4. Access plugin data.
 
-We'll cover each of these in the following sections.
+The following sections cover each of these steps in detail.
 
 ### Write plugin code.
 
-We provide a Python SDK called [pywaggle](https://github.com/waggle-sensor/pywaggle) to help develop plugins for Sage. Please refer to pywaggle's [usage guide](https://github.com/waggle-sensor/pywaggle/blob/main/docs/writing-a-plugin.md) on how to get started.
+The entry point to writing plugins is our Python library [pywaggle](https://github.com/waggle-sensor/pywaggle). This library provides all the necessary abstractions for accessing and publishing data. For this step, please refer to pywaggle's own in-depth guide on [writing plugins](https://github.com/waggle-sensor/pywaggle/blob/main/docs/writing-a-plugin.md).
 
-### Submit a plugin code to ECR
+### Submit plugin to the Edge Code Repository.
 
 We require plugins to be submitted to the [Edge Code Repository](https://portal.sagecontinuum.org) to be built and tested to validate that they are ready to be scheduled on nodes.
 
@@ -45,6 +46,10 @@ In order to submit a plugin:
 
 If everything is successful, your plugin will appeared and be marked as "Built".
 
-### Schedule a plugin for deployment
+### Schedule plugin for deployment.
 
 _TODO Tie in with Yongho's scheduling doc._
+
+### Access plugin data.
+
+Once a plugin has been deployed to node(s) and is publishing data, you can [access the published data](./accessing-data.md) in the Sage Data Repository.
