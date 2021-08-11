@@ -18,7 +18,7 @@ Plugins fit into the wider Sage infrastructure by being added to the [Edge Code 
 
 ## Exploring existing edge applications
 
-One of the major goals of Sage is to provide the science community with a diverse set of edge applications to enable new kinds of research. These edge applications are maintained in the [Edge Code Repository](https://portal.sagecontinuum.org) and contain information and links to their source repos.
+One of the major goals of Sage is to provide the science community with a diverse set of edge applications to enable new kinds of research. These edge applications are maintained in the [Edge Code Repository](https://portal.sagecontinuum.org) where you can find more background information and links to their source repos.
 
 We encourage users to explore the [ECR](https://portal.sagecontinuum.org) to get familiar with existing applications as well a references if you develop your own edge applications.
 
@@ -42,14 +42,13 @@ The entry point to writing plugins is our Python library [pywaggle](https://gith
 
 We require plugins to be submitted to the [Edge Code Repository](https://portal.sagecontinuum.org) to be built and tested to validate that they are ready to be scheduled on nodes.
 
-_TODO Describe a plugin's sage.yaml and Dockerfile._
+The following steps are required to submit a plugin to ECR.
 
-In order to submit a plugin:
-
-1. Go to [Edge Code Repository](https://portal.sagecontinuum.org).
-2. Go to "Sign In" and follow the instructions.
-3. Go to "My Apps".
-4. Go to "Create app" and follow the instructions.
+1. Create a repo for plugin and add required packaging files. (See [pywaggle guide](https://github.com/waggle-sensor/pywaggle/blob/main/docs/writing-a-plugin.md#adding-hello-world-plugin-packaging-info) for details.)
+2. Go to [Edge Code Repository](https://portal.sagecontinuum.org).
+3. Go to "Sign In" and follow the instructions.
+4. Go to "My Apps".
+5. Go to "Create app" and follow the instructions.
 
 If everything is successful, your plugin will appeared and be marked as "Built".
 
