@@ -16,22 +16,29 @@ Plugins fit into the wider Sage infrastructure by being added to the [Edge Code 
 
 ![Plugins in Sage](./images/plugin-sage.svg)
 
+## Exploring existing edge applications
+
+One of the major goals of Sage is to provide the science community with a diverse set of edge applications to enable new kinds of research. These edge applications are maintained in the [Edge Code Repository](https://portal.sagecontinuum.org) and contain information and links to their source repos.
+
+We encourage users to explore the [ECR](https://portal.sagecontinuum.org) to get familiar with existing applications as well a references if you develop your own edge applications.
+
 ## Developing new edge applications
 
 Writing a new edge applications (i.e. __plugin__) consists of the following steps:
 
-1. Write plugin code.
-2. Submit plugin to the [Edge Code Repository](https://portal.sagecontinuum.org).
-3. Schedule plugin for deployment.
-4. Access plugin data.
+1. Write plugin code
+
+2. Submit plugin to the [Edge Code Repository](https://portal.sagecontinuum.org)
+3. Schedule plugin for deployment
+4. Access plugin data
 
 The following sections cover each of these steps in detail.
 
-### Write plugin code.
+### Write plugin code
 
 The entry point to writing plugins is our Python library [pywaggle](https://github.com/waggle-sensor/pywaggle). This library provides all the necessary abstractions for accessing and publishing data. For this step, please refer to pywaggle's own in-depth guide on [writing plugins](https://github.com/waggle-sensor/pywaggle/blob/main/docs/writing-a-plugin.md).
 
-### Submit plugin to the Edge Code Repository.
+### Submit plugin to the Edge Code Repository
 
 We require plugins to be submitted to the [Edge Code Repository](https://portal.sagecontinuum.org) to be built and tested to validate that they are ready to be scheduled on nodes.
 
@@ -46,10 +53,10 @@ In order to submit a plugin:
 
 If everything is successful, your plugin will appeared and be marked as "Built".
 
-### Schedule plugin for deployment.
+### Schedule plugin for deployment
 
 _TODO Tie in with Yongho's scheduling doc._
 
-### Access plugin data.
+### Access plugin data
 
 Once a plugin has been deployed to node(s) and is publishing data, you can [access the published data](./accessing-data.md) in the Sage Data Repository.
