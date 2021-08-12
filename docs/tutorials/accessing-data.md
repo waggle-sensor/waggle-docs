@@ -68,6 +68,7 @@ Sensor data from nodes that comes in numerical or textual form (e.g. temperature
 }
 ```
 
-## TODO
-
-LCRC?
+The file can be downloaded like this: (Note: This specifc example file does not exist yet)
+```console
+curl https://osn.sagecontinuum.org/api/v1/objects/0000000000000001-sage-camera-v1.2-20210224/1621658141892137216-image.jpg
+```
