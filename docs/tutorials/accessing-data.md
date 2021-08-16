@@ -9,6 +9,7 @@ sidebar_position: 3
 
 Raw sensor data is collected by edge code. This edge code can either talk to sensor hardware directly or may obtain data from an abstraction layer (not show in image above). Edge code may forward unprocessed sensor data, do light processing to convert raw sensor values into final data products, or may use CPU/GPU-intensive workloads (e.g. AI application) to extract information from data-intensive sensors such as cameras, microphone or LIDAR.  
 
+Sensor data from nodes that comes in numerical or textual form (e.g. temperature) is stored natively in our time series database. Sensor data in form of large files (images, audio, movies..) is stored in the Sage object store, but is referenced in the time series data (thus the dashed arrow in the figure above). Thus, the primary way to find all data (sensor and large files) is via the Sage sensor query API described below.
 
 Currently the SAGE sensor database contains data such as:
 
@@ -20,9 +21,9 @@ Currently the SAGE sensor database contains data such as:
 
 Data can be accessed via "data bundles"  or by API calls:
 
-**Data bundles** are static collections of sensor data which includes all metadata needed to understand how the data was generated. Data bundles are targeted at scientists that want to be able to cite data they used in their publications. To find data bundles, please use the Sage commons web portal (link)
+**Data bundles** are static collections of sensor data which includes all metadata needed to understand how the data was generated. Data bundles are targeted at scientists that want to be able to cite data they used in their publications. To find data bundles, please use the Sage commons web portal (link to be provided)
 
-The **Sage sensor query API** allows for flexible access to historical and "real time" data in Sage.  This example shows how to retrieve data the latest data from a specific sensor:
+The **Sage sensor query API** allows for flexible access to historical and "real time" data in Sage.  This example shows how to retrieve data the latest data from a specific sensor (you can adjust the `start` field if you do not get any recent data):
 
 ```console
 curl -H 'Content-Type: application/json' https://sdr.sagecontinuum.org/api/v1/query -d '
@@ -54,8 +55,8 @@ More details on how to use the query API can be found [here](https://github.com/
 A detailed description of the data model can be found [here](https://github.com/waggle-sensor/waggle-beehive-v2/blob/main/docs/querying-measurements.md#data-model).
 
 
-## Large Files (i.e. Training Data)
-Sensor data from nodes that comes in numerical or textual form (e.g. temperature) is stored natively in our time series database. Sensor data in form of large files (images, audio, movies..) is stored in the Sage object store, but is referenced in the time series data, see the following example:
+## Accessing Large Files (i.e. Training Data)
+A query to the Sage sensor query API can give a result that looks like this:
 ```json
 {
   "timestamp":"2021-02-24T21:14:33.094407Z",
@@ -68,7 +69,7 @@ Sensor data from nodes that comes in numerical or textual form (e.g. temperature
 }
 ```
 
-The file can be downloaded like this: (Note: This specifc example file does not exist yet)
+The file, referenced in the field `value` can be downloaded like this: (Note: This specifc example file does not exist yet)
 ```console
 curl -O https://osn.sagecontinuum.org/api/v1/objects/0000000000000001-sage-camera-v1.2-20210224/1621658141892137216-image.jpg
 ```
