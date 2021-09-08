@@ -26,7 +26,7 @@ Data can be accessed via "data bundles"  or by API calls:
 The **Sage sensor query API** allows for flexible access to historical and "real time" data in Sage.  This example shows how to retrieve data the latest data from a specific sensor (you can adjust the `start` field if you do not get any recent data):
 
 ```console
-curl -H 'Content-Type: application/json' https://sdr.sagecontinuum.org/api/v1/query -d '
+curl -H 'Content-Type: application/json' https://data.sagecontinuum.org/api/v1/query -d '
 {
     "start": "-10s",
     "filter": {
@@ -59,17 +59,21 @@ A detailed description of the data model can be found [here](https://github.com/
 A query to the Sage sensor query API can give a result that looks like this:
 ```json
 {
-  "timestamp":"2021-02-24T21:14:33.094407Z",
-  "name":"env.camera",
-  "value":"https://osn.sagecontinuum.org/api/v1/objects/0000000000000001-sage-camera-v1.2-20210224/1621658141892137216-image.jpg",
+  "timestamp": 1621865917041491264,
+  "kind": "env.audio",
+  "value": "https://storage.sagecontinuum.org/api/v1/data/sage/sage-plugin-audio-sampler-0.1.3/000048b02d15c332/1621865917041491264-sample.mp3",
   "meta": {
-    "node":"0000000000000001",
-    "plugin":"sage/camera:1.0.2"
+    "node":"000048b02d15c332",
+    "plugin":"sage-plugin-audio-sampler-0.1.3",
+    "job":"sage",
+    "task":"sage-plugin-audio-sampler-0.1.3"
   }
 }
 ```
 
 The file, referenced in the field `value` can be downloaded like this: (Note: This specifc example file does not exist yet)
 ```console
-curl -O https://osn.sagecontinuum.org/api/v1/objects/0000000000000001-sage-camera-v1.2-20210224/1621658141892137216-image.jpg
+curl -O https://storage.sagecontinuum.org/api/v1/data/<job>/<task>/<node>/<timestamp>-<filename>
+or specifically:
+curl -O https://storage.sagecontinuum.org/api/v1/data/sage/sage-plugin-audio-sampler-0.1.3/000048b02d15c332/1621865917041491264-sample.mp3
 ```
