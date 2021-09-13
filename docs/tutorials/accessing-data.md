@@ -56,24 +56,60 @@ A detailed description of the data model can be found [here](https://github.com/
 
 
 ## Accessing Large Files (i.e. Training Data)
-A query to the Sage sensor query API can give a result that looks like this:
-```json
-{
-  "timestamp": 1621865917041491264,
-  "kind": "env.audio",
-  "value": "https://storage.sagecontinuum.org/api/v1/data/sage/sage-plugin-audio-sampler-0.1.3/000048b02d15c332/1621865917041491264-sample.mp3",
-  "meta": {
-    "node":"000048b02d15c332",
-    "plugin":"sage-plugin-audio-sampler-0.1.3",
-    "job":"sage",
-    "task":"sage-plugin-audio-sampler-0.1.3"
-  }
-}
+To find files collected by Sage nodes use the filter `"name":"upload"` and specify additional filters to limit search results, for example:
+
+```console
+curl -s -H 'Content-Type: application/json' https://data.sagecontinuum.org/api/v1/query -d '{
+  "start": "2021-09-10T12:51:36.246454082Z",
+  "end":"2021-09-10T13:51:36.246454082Z",
+  "filter": {
+    "name":"upload",
+    "plugin":"imagesampler-left:0.2.3"
+    }
+  }'
 ```
 
-The file, referenced in the field `value` can be downloaded like this: (Note: This specifc example file does not exist yet)
-```console
-curl -O https://storage.sagecontinuum.org/api/v1/data/<job>/<task>/<node>/<timestamp>-<filename>
-or specifically:
-curl -O https://storage.sagecontinuum.org/api/v1/data/sage/sage-plugin-audio-sampler-0.1.3/000048b02d15c332/1621865917041491264-sample.mp3
+Output:
+```json
+{"timestamp":"2021-09-10T13:19:27.237651354Z","name":"upload","value":"https://storage.sagecontinuum.org/api/v1/data/sage/sage-imagesampler-left-0.2.3/000048b02d05a0a4/1631279967237651354-2021-09-10T13:19:26+0000.jpg","meta":{"job":"sage","node":"000048b02d05a0a4","plugin":"imagesampler-left:0.2.3","task":"imagesampler-left:0.2.3"}}
+{"timestamp":"2021-09-10T13:50:32.29028603Z","name":"upload","value":"https://storage.sagecontinuum.org/api/v1/data/sage/sage-imagesampler-left-0.2.3/000048b02d15bc3d/1631281832290286030-2021-09-10T13:50:32+0000.jpg","meta":{"job":"sage","node":"000048b02d15bc3d","plugin":"imagesampler-left:0.2.3","task":"imagesampler-left:0.2.3"}}
+{"timestamp":"2021-09-10T12:52:59.782262376Z","name":"upload","value":"https://storage.sagecontinuum.org/api/v1/data/sage/sage-imagesampler-left-0.2.3/000048b02d15bdc2/1631278379782262376-2021-09-10T12:52:59+0000.jpg","meta":{"job":"sage","node":"000048b02d15bdc2","plugin":"imagesampler-left:0.2.3","task":"imagesampler-left:0.2.3"}}
+{"timestamp":"2021-09-10T13:49:49.084350086Z","name":"upload","value":"https://storage.sagecontinuum.org/api/v1/data/sage/sage-imagesampler-left-0.2.3/000048b02d15bdd2/1631281789084350086-2021-09-10T13:49:48+0000.jpg","meta":{"job":"sage","node":"000048b02d15bdd2","plugin":"imagesampler-left:0.2.3","task":"imagesampler-left:0.2.3"}}
 ```
+
+For a quick way to only extract the urls from the json objects above, a tool like [jq](https://stedolan.github.io/jq/) can be used:
+
+```console
+curl -s -H 'Content-Type: application/json' https://data.sagecontinuum.org/api/v1/query -d '{
+  "start": "2021-09-10T12:51:36.246454082Z",
+  "end":"2021-09-10T13:51:36.246454082Z",
+  "filter": {
+    "name":"upload",
+    "plugin":"imagesampler-left:0.2.3"
+    }
+  }' | jq -r .value > urls.txt
+```
+
+The resulting file `urls.txt` will look like this:
+```text
+https://storage.sagecontinuum.org/api/v1/data/sage/sage-imagesampler-left-0.2.3/000048b02d05a0a4/1631279967237651354-2021-09-10T13:19:26+0000.jpg
+https://storage.sagecontinuum.org/api/v1/data/sage/sage-imagesampler-left-0.2.3/000048b02d15bc3d/1631281832290286030-2021-09-10T13:50:32+0000.jpg
+https://storage.sagecontinuum.org/api/v1/data/sage/sage-imagesampler-left-0.2.3/000048b02d15bdc2/1631278379782262376-2021-09-10T12:52:59+0000.jpg
+https://storage.sagecontinuum.org/api/v1/data/sage/sage-imagesampler-left-0.2.3/000048b02d15bdd2/1631281789084350086-2021-09-10T13:49:48+0000.jpg
+```
+
+To download the files:
+```console
+wget -i urls.txt
+```
+
+If many files are downloaded, it is better to preserve the directory tree structure to prevent filename collision:
+```console
+wget -r -i urls.txt
+```
+
+
+
+
+
+
