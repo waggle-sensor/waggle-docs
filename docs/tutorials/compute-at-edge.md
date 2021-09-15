@@ -54,7 +54,7 @@ If everything is successful, your plugin will appeared and be marked as "Built".
 
 ### Schedule plugin for deployment
 
-_TODO Tie in with Yongho's scheduling doc._
+_TODO This is work in progress! We will update this section once the scheduler is public._
 
 ### Access plugin data
 
