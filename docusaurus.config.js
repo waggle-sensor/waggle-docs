@@ -6,7 +6,7 @@ module.exports = {
   title: 'Sage',
   tagline: 'Cyberinfrastructure for AI at the Edge',
   url: 'https://sagecontinuum.github.io',
-  baseUrl: '/sage-docs/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/sage-favicon.png',
@@ -32,11 +32,11 @@ module.exports = {
           position: 'left',
           label: 'Tutorials',
         },
-        {
+        /*{
           to: '/blog',
           label: 'News',
           position: 'left'
-        },
+        },*/
         {
           to: 'https://portal.sagecontinuum.org',
           label: 'Sage Portal',

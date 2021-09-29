@@ -29,7 +29,7 @@ function HomepageHeader() {
 }
 
 export default function Home() {
-  return <Redirect to='/sage-docs/docs/about/overview' />;
+  return <Redirect to='/docs/about/overview' />;
 
   /* We don't need a home page, or at least for now
   const {siteConfig} = useDocusaurusContext();
