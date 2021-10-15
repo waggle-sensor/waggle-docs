@@ -5,7 +5,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 module.exports = {
   title: 'Sage',
   tagline: 'Cyberinfrastructure for AI at the Edge',
-  url: 'https://sagecontinuum.github.io',
+  url: 'https://docs.sagecontinuum.org',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
