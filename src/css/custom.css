@@ -68,6 +68,20 @@ html[data-theme='dark'] .navbar__link--active  {
 }
 
 /*
+ * search
+ */
+
+.DocSearch-Button {
+  width: 325px;
+}
+
+@media screen and (max-width: 600px) {
+  .DocSearch-Button {
+    width: 150px;
+  }
+}
+
+/*
  * sidebar
  */
 

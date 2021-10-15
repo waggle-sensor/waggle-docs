@@ -83,6 +83,17 @@ module.exports = {
     },
     hideableSidebar: true,
     disableSwitch: true,
+    algolia: {
+      apiKey: 'BH4D9OD16A',
+      indexName: 'sage',
+      contextualSearch: false, // mostly for versioned docs
+      // appId: '',            // Optional: for self-hosted search
+      searchParameters: {},    // Optional: Algolia search parameters
+      apiKey: 'fda9f17c9dfd817efd82bba4b1d8fb4c',
+    },
+    colorMode: {
+      disableSwitch: true
+    }
   },
   presets: [
     [
