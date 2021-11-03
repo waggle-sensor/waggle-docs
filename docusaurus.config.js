@@ -87,9 +87,9 @@ module.exports = {
       apiKey: 'BH4D9OD16A',
       indexName: 'sage',
       contextualSearch: false, // mostly for versioned docs
-      // appId: '',            // Optional: for self-hosted search
+      appId: 'XYV3A23P29',            // Optional: for self-hosted search
       searchParameters: {},    // Optional: Algolia search parameters
-      apiKey: 'fda9f17c9dfd817efd82bba4b1d8fb4c',
+      apiKey: '8dd26cf6515c47eade5695acecd06671',
     },
     colorMode: {
       disableSwitch: true
