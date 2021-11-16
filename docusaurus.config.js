@@ -124,7 +124,7 @@ module.exports = {
         redirects: [
           {
             to: '/docs/tutorials/accessing-data',
-            from: ['/data']
+            from: ['/data', '/docs/data']  // obscure fix for /data/ vs /data redirect(?)
           },
         ],
       },
