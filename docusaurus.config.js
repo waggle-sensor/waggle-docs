@@ -87,7 +87,7 @@ module.exports = {
       apiKey: 'BH4D9OD16A',
       indexName: 'sage',
       contextualSearch: false, // mostly for versioned docs
-      appId: 'XYV3A23P29',            // Optional: for self-hosted search
+      appId: 'XYV3A23P29',
       searchParameters: {},    // Optional: Algolia search parameters
       apiKey: '8dd26cf6515c47eade5695acecd06671',
     },
@@ -115,6 +115,19 @@ module.exports = {
           customCss: require.resolve('./src/css/custom.css'),
         },
       },
-    ],
+    ]
   ],
+  plugins: [
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            to: '/docs/tutorials/accessing-data',
+            from: ['/data']
+          },
+        ],
+      },
+    ]
+  ]
 };
