@@ -21,7 +21,9 @@ Currently the SAGE sensor database contains data such as:
 
 Data can be accessed via "data bundles"  or by API calls:
 
-**Data bundles** are static collections of sensor data which includes all metadata needed to understand how the data was generated. Data bundles are targeted at scientists that want to be able to cite data they used in their publications. To find data bundles, please use the Sage commons web portal (link to be provided)
+**Data bundles** are static collections of sensor data which includes all metadata needed to understand how the data was generated. Data bundles are targeted at scientists that want to be able to cite data they used in their publications.
+
+Data bundles will eventually be provided through the Sage Commons web portal. In the mean time, data from Sage Beta is begin compiled nightly in [this archive](https://web.lcrc.anl.gov/public/waggle/sagedata/SAGE-Data.tar).
 
 The **Sage sensor query API** allows for flexible access to historical and "real time" data in Sage.  This example shows how to retrieve data the latest data from a specific sensor (you can adjust the `start` field if you do not get any recent data):
 
