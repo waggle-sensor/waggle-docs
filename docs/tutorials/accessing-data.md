@@ -19,13 +19,17 @@ Currently the SAGE sensor database contains data such as:
 - AI-based object counts from camera images
 - (system data of the nodes, free disk space etc.)
 
-Data can be accessed via "data bundles"  or by API calls:
+Data can be accessed via "data bundles"  or the query API.
+
+## Data Bundles
 
 **Data bundles** are static collections of sensor data which includes all metadata needed to understand how the data was generated. Data bundles are targeted at scientists that want to be able to cite data they used in their publications.
 
 Data bundles will eventually be provided through the Sage Commons web portal. In the mean time, data from Sage Beta is begin compiled nightly in [this archive](https://web.lcrc.anl.gov/public/waggle/sagedata/SAGE-Data.tar).
 
-The **Sage sensor query API** allows for flexible access to historical and "real time" data in Sage.  This example shows how to retrieve data the latest data from a specific sensor (you can adjust the `start` field if you do not get any recent data):
+## Query API
+
+The **Sage sensor data query API** allows for flexible access to historical and "real time" data in Sage.  This example shows how to retrieve data the latest data from a specific sensor (you can adjust the `start` field if you do not get any recent data):
 
 ```console
 curl -H 'Content-Type: application/json' https://data.sagecontinuum.org/api/v1/query -d '
@@ -49,13 +53,9 @@ Example results:
 More details on how to use the query API can be found [here](https://github.com/waggle-sensor/waggle-beehive-v2/blob/main/docs/querying-measurements.md#query-api)
 :::
 
-
-
-
 ## Data Model
 
 A detailed description of the data model can be found [here](https://github.com/waggle-sensor/waggle-beehive-v2/blob/main/docs/querying-measurements.md#data-model).
-
 
 ## Accessing Large Files (i.e. Training Data)
 To find files collected by Sage nodes use the filter `"name":"upload"` and specify additional filters to limit search results, for example:
