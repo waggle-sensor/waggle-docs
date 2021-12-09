@@ -79,6 +79,7 @@ Output:
 {"timestamp":"2021-09-10T13:49:49.084350086Z","name":"upload","value":"https://storage.sagecontinuum.org/api/v1/data/sage/sage-imagesampler-left-0.2.3/000048b02d15bdd2/1631281789084350086-2021-09-10T13:49:48+0000.jpg","meta":{"job":"sage","node":"000048b02d15bdd2","plugin":"imagesampler-left:0.2.3","task":"imagesampler-left:0.2.3"}}
 ```
 
+
 For a quick way to only extract the urls from the json objects above, a tool like [jq](https://stedolan.github.io/jq/) can be used:
 
 ```console
@@ -110,6 +111,7 @@ If many files are downloaded, it is better to preserve the directory tree struct
 wget -r -i urls.txt
 ```
 
+To access private files use `--user=<user> --password=<password>` when using `wget`, or `-u <user>:<password>` when using curl.
 
 
 
