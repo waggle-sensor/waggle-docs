@@ -23,7 +23,7 @@ Data can be accessed via "data bundles"  or the query API.
 
 ## Restricted access files
 
-Some of our nodes are deployed in public way and certain data (e.g. images) require signage of a usage agreement form to access them. Please [contact us](mailto:support@sagecontinuum.org) if you are interested in access. The sensor log (see Query API) contains references to both restricted and unrestricted files. Downloading restricted files without authorization will return a `401 Unauthorized`.
+Some of our nodes are deployed in public way and certain data (e.g. images) need written acceptance of a data-usage agreement to access them. Please [contact us](mailto:support@sagecontinuum.org) if you are interested in access. The sensor log (see Query API) contains references to both restricted and unrestricted files. Downloading restricted files without authorization will return a `401 Unauthorized`.
 
 ## Data Bundles
 
