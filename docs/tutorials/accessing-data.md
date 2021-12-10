@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Access and Use Data
+# Access and use data
 
 ![Data Movement](./images/data_movement.svg)
 
