@@ -117,7 +117,7 @@ If many files are downloaded, it is better to preserve the directory tree struct
 wget -r -i urls.txt
 ```
 
-To access private files use `--user=<user> --password=<password>` when using `wget`, or `-u <user>:<password>` when using curl.
+For access to restricted files see Section [Restricted access files](restricted-access-files). Username and password can be specified via  `--user=<user> --password=<password>` when using `wget`, or `-u <user>:<password>` when using curl.
 
 
 
