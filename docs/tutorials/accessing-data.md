@@ -21,6 +21,10 @@ Currently the SAGE sensor database contains data such as:
 
 Data can be accessed via "data bundles"  or the query API.
 
+## Restricted access files
+
+Some of our nodes are deployed in public way and certain data (e.g. images) require signage of a usage agreement form to access them. Please [contact us](mailto:support@sagecontinuum.org) if you are interested in access. The sensor log (see Query API) contains references to both restricted and unrestricted files. Downloading restricted files without authorization will return a `401 Unauthorized`.
+
 ## Data Bundles
 
 **Data bundles** are static collections of sensor data which includes all metadata needed to understand how the data was generated. Data bundles are targeted at scientists that want to be able to cite data they used in their publications.
@@ -58,7 +62,9 @@ More details on how to use the query API can be found [here](https://github.com/
 A detailed description of the data model can be found [here](https://github.com/waggle-sensor/waggle-beehive-v2/blob/main/docs/querying-measurements.md#data-model).
 
 ## Accessing Large Files (i.e. Training Data)
-To find files collected by Sage nodes use the filter `"name":"upload"` and specify additional filters to limit search results, for example:
+SAGE collects large files for AI training purposes. These files stored in an S3 bucket hosted by the [Open Storage Network](https://www.openstoragenetwork.org/).
+
+To find these files use the filter `"name":"upload"` and specify additional filters to limit search results, for example:
 
 ```console
 curl -s -H 'Content-Type: application/json' https://data.sagecontinuum.org/api/v1/query -d '{
