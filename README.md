@@ -8,6 +8,11 @@ Check back later for new tutorials about Sage.
 * [Using Markdown](./writing-docs/using-markdown.md)
 
 
+## Updating Docs
+
+* [Editing a Page](./writing-docs/updating-docs.md)
+
+
 ## Local Development
 
 Clone this repo.
