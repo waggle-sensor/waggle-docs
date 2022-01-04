@@ -31,9 +31,15 @@ While almost all Sage data is open, some types of data requires a written Data U
 
 Data Bundles are compiled nightly and may be downloaded in [this archive](https://web.lcrc.anl.gov/public/waggle/sagedata/SAGE-Data.tar).
 
-## Query API
+## Data API
 
-The **Sage sensor data query API** allows for flexible access to historical and "real time" data in Sage.  This example shows how to retrieve data the latest data from a specific sensor (you can adjust the `start` field if you do not get any recent data):
+The Sage **data API** provides immediate and flexible access to sensor data via search over time and metadata tags. It is primarily intended to support exploratory or near real time use cases.
+
+Due to the wide variety of possible queries, we do not attempt to provide DOIs for results from the data API. Instead, we leave it up to users to organize and curate datasets for their own application. Long term, curated data is instead provided via **Data Bundles**.
+
+### Query Example
+
+This example shows how to retrieve data the latest data from a specific sensor (you can adjust the `start` field if you do not get any recent data):
 
 ```console
 curl -H 'Content-Type: application/json' https://data.sagecontinuum.org/api/v1/query -d '
@@ -44,6 +50,7 @@ curl -H 'Content-Type: application/json' https://data.sagecontinuum.org/api/v1/q
     }
 }
 '
+
 ```
 Example results:
 ```json
