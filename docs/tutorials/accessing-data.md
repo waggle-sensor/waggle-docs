@@ -33,9 +33,9 @@ Data Bundles are compiled nightly and may be downloaded in [this archive](https:
 
 ## Data API
 
-The Sage **data API** provides immediate and flexible access to sensor data via search over time and metadata tags. It is primarily intended to support exploratory or near real time use cases.
+The Sage **data API** provides immediate and flexible access to sensor data via search over time and metadata tags. It is primarily intended to support exploratory and near real time use cases.
 
-Due to the wide variety of possible queries, we do not attempt to provide DOIs for results from the data API. Instead, we leave it up to users to organize and curate datasets for their own application. Long term, curated data is instead provided via **Data Bundles**.
+Due to the wide variety of possible queries, we do not attempt to provide DOIs for results from the data API. Instead, we leave it up to users to organize and curate datasets for their own applications. Long term, curated data is instead provided via **Data Bundles**.
 
 ### Query Example
 
