@@ -42,7 +42,7 @@ The entry point to writing plugins is our Python library [pywaggle](https://gith
 
 ### Test and debug plugin code in Waggle/Sage nodes
 
-If you have Waggle/Sage nodes set up for your plugin development (Consult with us for this resource), plugin code can be tested against the nodes to make sure it works and the plugin does not crash when it is deployed to nodes in the field. We provide a set of tools to support access for Sage node resource and the ability to debug/test plugin code. Detailed examples and instructions can be found [here](https://github.com/sagecontinuum/ses/tree/master/docs/pluginctl/README.md).
+If you have Waggle/Sage nodes set up for your plugin development (Consult with us for this resource), plugin code can be tested against the nodes to make sure it works, and the plugin does not crash when it is deployed to nodes in the field. We provide a set of tools to support access for Waggle/Sage node resource and the ability to debug/test plugin code. Detailed examples and instructions can be found [here](https://github.com/sagecontinuum/ses/tree/master/docs/pluginctl/README.md).
 
 ### Submit plugin to the Edge Code Repository
 
