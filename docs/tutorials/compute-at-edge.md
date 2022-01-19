@@ -28,7 +28,7 @@ Writing a new edge applications (i.e. __plugin__) consists of the following step
 
 1. Write plugin code
 
-2. (Optional) Test and debug plugin code with Waggle nodes
+2. (Optional) Test and debug plugin code with Waggle/Sage nodes
 
 3. Submit plugin to the [Edge Code Repository](https://portal.sagecontinuum.org)
 4. Schedule plugin for deployment
@@ -40,7 +40,7 @@ The following sections cover each of these steps in detail.
 
 The entry point to writing plugins is our Python library [pywaggle](https://github.com/waggle-sensor/pywaggle). This library provides all the necessary abstractions for accessing and publishing data. For this step, please refer to pywaggle's own in-depth guide on [writing plugins](https://github.com/waggle-sensor/pywaggle/blob/main/docs/writing-a-plugin.md).
 
-### Test and debug plugin code with Waggle/Sage nodes
+### Test and debug plugin code in Waggle/Sage nodes
 
 If you have Waggle/Sage nodes set up for your plugin development (Consult with us for this resource), plugin code can be tested against the nodes to make sure it works and the plugin does not crash when it is deployed to nodes in the field. We provide a set of tools to support access for Sage node resource and the ability to debug/test plugin code. Detailed examples and instructions can be found [here](https://github.com/sagecontinuum/ses/tree/master/docs/pluginctl/README.md).
 
