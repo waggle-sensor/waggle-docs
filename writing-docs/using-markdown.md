@@ -28,14 +28,22 @@ Markdown text with [links](./hello.md)
 Regular Markdown links are supported, using url paths or relative file paths.
 
 ```md
-Let's see how to [Create a document](/create-a-document).
+Let's see how to [edit a page in github](/create-a-document).
 ```
 
 ```md
-Let's see how to [Create a document](./create-a-document.md).
+Let's see how to [edit a page in github](./create-a-document.md).
 ```
 
 **Result:** Let's see how to [Create a document](./create-a-document.md).
+
+## Files
+
+Use the same Markdown syntax as links for files (such as PDFs). 
+
+```md
+[Wild Sage Node Manual](./pdfs/WSN_GS_V1.pdf)
+```
 
 ## Images
 
