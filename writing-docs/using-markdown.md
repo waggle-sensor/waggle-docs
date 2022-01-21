@@ -25,17 +25,19 @@ Markdown text with [links](./hello.md)
 
 ## Links
 
-Regular Markdown links are supported, using url paths or relative file paths.
+Regular Markdown links are supported, using url paths or relative file paths.  
+
+> **Note:** Relative is preferred.
 
 ```md
-Let's see how to [edit a page in github](/create-a-document).
+Let's see how to [update a page](/writing-docs/updating-docs.md).
 ```
 
 ```md
-Let's see how to [edit a page in github](./create-a-document.md).
+Let's see how to [update a page](./updating-docs.md).
 ```
 
-**Result:** Let's see how to [Create a document](./create-a-document.md).
+**Result:** Let's see how to [update a page](./updating-docs.md).
 
 ## Files
 
@@ -72,7 +74,7 @@ def HelloSage():
 
 ## Admonitions
 
-Docusaurus has a special syntax to create admonitions and callouts:
+In addition to the usual Markdown syntax (`> some tip`), Docusaurus has a special syntax to create admonitions and callouts:
 
     :::tip My tip
 
