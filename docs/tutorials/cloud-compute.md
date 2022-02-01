@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Compute in the cloud
 
-Sage provides a number of interfaces which other systems can build on top of. In this section, we explore some of the most common applications of Sage.
+Sage provides a number of interfaces which other computing and HPC systems can build on top of. In this section, we explore some of the most common applications of Sage.
 
 ## Triggering on data from the edge
 
