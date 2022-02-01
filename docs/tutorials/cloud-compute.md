@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Compute in the cloud
+# From Edge - Triggering Computation based on data 
 
 Sage provides a number of interfaces which other computing and HPC systems can build on top of. In this section, we explore some of the most common applications of Sage.
 
