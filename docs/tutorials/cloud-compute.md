@@ -41,4 +41,4 @@ while True:
 
 The above code queries a 10 minute window of atmospheric pressure data every minute and "posts" alerts for nodes exceeding a predefined standard deviation threshold.
 
-[This example](https://github.com/sagecontinuum/sage-data-client/blob/main/examples/pressure_event_trigger.py) and more can be found in the Sage data client [examples](https://github.com/sagecontinuum/sage-data-client/blob/main/examples/) directory.
+This example and more can be found in the Sage data client [examples](https://github.com/sagecontinuum/sage-data-client/blob/main/examples/) directory.
