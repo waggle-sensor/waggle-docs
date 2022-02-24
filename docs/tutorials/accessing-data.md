@@ -37,7 +37,22 @@ The Sage **data API** provides immediate and flexible access to sensor data via 
 
 Due to the wide variety of possible queries, we do not attempt to provide DOIs for results from the data API. Instead, we leave it up to users to organize and curate datasets for their own applications. Long term, curated data is instead provided via **Data Bundles**.
 
-### Query Example
+### Using the Data API
+
+There are two recommended approaches to working with the Data API:
+
+1. Use the [Python Sage Data Client](https://pypi.org/project/sage-data-client/).
+2. Use the HTTP API.
+
+Each is appropriate for different use cases and integrations, but generally the following rule applies:
+
+_If you just want to get data into a Pandas dataframe for analysis and plotting, use the sage-data-client, otherwise use the HTTP API._
+
+#### Sage Data Client
+
+The Sage Data Client is a Python library which streamlines querying the data API and getting the results into a Pandas dataframe. For details on installation and usage, please see the [Python package](https://pypi.org/project/sage-data-client/).
+
+#### HTTP API
 
 This example shows how to retrieve data the latest data from a specific sensor (you can adjust the `start` field if you do not get any recent data):
 
