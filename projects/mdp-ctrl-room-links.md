@@ -14,10 +14,10 @@ https://portal.sagecontinuum.org/data-browser?nodes=W038&apps=plugin-raingauge%3
 #### Air Quality
 
 [W038](
-https://portal.sagecontinuum.org/data-browser?nodes=W038&apps=plugin-iio%3A0.4.5&names=env.temperature&&window=d) [1 day; loads faster]
+https://portal.sagecontinuum.org/data-browser?nodes=W038&apps=air-quality:0.2.0&names=env.temperature&&window=d) [1 day; loads faster]
 
 [W038](
-https://portal.sagecontinuum.org/data-browser?nodes=W038&apps=plugin-iio%3A0.4.5&names=env.temperature&&window=d) [7 day; loads slower]
+https://portal.sagecontinuum.org/data-browser?nodes=W038&apps=air-quality:0.2.0&names=env.temperature&&window=d) [7 day; loads slower]
 
 
 #### Mobotix
