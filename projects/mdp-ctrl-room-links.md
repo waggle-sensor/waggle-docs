@@ -4,11 +4,11 @@
 
 #### Select Sensor Data
 
-Temperature: [W01D](https://portal.sagecontinuum.org/data-browser?nodes=W01D&apps=plugin-iio%3A0.6.0&names=env.temperature&window=7d) | [W01F](https://portal.sagecontinuum.org/data-browser?nodes=W01D&apps=plugin-iio%3A0.6.0&names=env.temperature&window=7d) | [W038](https://portal.sagecontinuum.org/data-browser?nodes=W038&apps=plugin-iio%3A0.6.0&names=env.temperature&window=7d)
+Temperature: [W01D](https://portal.sagecontinuum.org/data-browser?nodes=W01D&apps=plugin-iio%3A0.6.0&names=env.temperature&window=7d) | [W01F](https://portal.sagecontinuum.org/data-browser?nodes=W01F&apps=plugin-iio%3A0.6.0&names=env.temperature&window=7d) | [W038](https://portal.sagecontinuum.org/data-browser?nodes=W038&apps=plugin-iio%3A0.6.0&names=env.temperature&window=7d)
 
 Raingauge: [W01D](
 https://portal.sagecontinuum.org/data-browser?nodes=W01D&apps=plugin-raingauge%3A0.4.1&window=7d) | [W01F](
-https://portal.sagecontinuum.org/data-browser?nodes=W01D&apps=plugin-raingauge%3A0.4.1&window=7d) | [W038](
+https://portal.sagecontinuum.org/data-browser?nodes=W01F&apps=plugin-raingauge%3A0.4.1&window=7d) | [W038](
 https://portal.sagecontinuum.org/data-browser?nodes=W038&apps=plugin-raingauge%3A0.4.1&window=7d)
 
 #### Air Quality
