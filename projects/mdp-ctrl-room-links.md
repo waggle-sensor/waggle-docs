@@ -7,9 +7,9 @@
 Temperature: [W01D](https://portal.sagecontinuum.org/data-browser?nodes=W01D&apps=plugin-iio%3A0.6.0&names=env.temperature&window=7d) | [W01F](https://portal.sagecontinuum.org/data-browser?nodes=W01F&apps=plugin-iio%3A0.6.0&names=env.temperature&window=7d) | [W038](https://portal.sagecontinuum.org/data-browser?nodes=W038&apps=plugin-iio%3A0.6.0&names=env.temperature&window=7d)
 
 Raingauge: [W01D](
-https://portal.sagecontinuum.org/data-browser?nodes=W01D&apps=plugin-raingauge%3A0.4.1&window=7d) | [W01F](
-https://portal.sagecontinuum.org/data-browser?nodes=W01F&apps=plugin-raingauge%3A0.4.1&window=7d) | [W038](
-https://portal.sagecontinuum.org/data-browser?nodes=W038&apps=plugin-raingauge%3A0.4.1&window=7d)
+https://portal.sagecontinuum.org/data-browser?nodes=W01D&apps=plugin-raingauge.*&window=7d) | [W01F](
+https://portal.sagecontinuum.org/data-browser?nodes=W01F&apps=plugin-raingauge.*&window=7d) | [W038](
+https://portal.sagecontinuum.org/data-browser?nodes=W038&apps=plugin-raingauge.*&window=7d)
 
 #### Air Quality
 
@@ -22,7 +22,7 @@ https://portal.sagecontinuum.org/data-browser?nodes=W038&apps=air-quality.*&name
 
 #### Mobotix
 
-[V008](https://portal.sagecontinuum.org/data-browser?apps=plugin-mobotix%3A0.001&nodes=V008&window=d&names=upload)
+[V008](https://portal.sagecontinuum.org/data-browser?nodes=V008&apps=mobotix-sampler.*&window=7d)
 
 
 #### Images
@@ -36,4 +36,10 @@ https://portal.sagecontinuum.org/data-browser?nodes=W038&apps=air-quality.*&name
 [W01D](https://portal.sagecontinuum.org/data-browser?nodes=W01D&apps=plugin-audio-sampler.*&window=7d) |
 [W01F](https://portal.sagecontinuum.org/data-browser?nodes=W01F&apps=plugin-audio-sampler.*&window=7d) |
 [W038](https://portal.sagecontinuum.org/data-browser?nodes=W038&apps=plugin-audio-sampler.*&window=7d)
+
+#### Video
+
+[W01D](https://portal.sagecontinuum.org/data-browser?apps=video-sampler.*&window=d&nodes=W01D) |
+[W01F](https://portal.sagecontinuum.org/data-browser?apps=video-sampler.*&window=d&nodes=W01F) |
+[W038](https://portal.sagecontinuum.org/data-browser?apps=video-sampler.*&window=d&nodes=W038)
 
