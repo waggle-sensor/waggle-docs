@@ -22,8 +22,3 @@
 #### Mobotix
 
 [V008](https://portal.sagecontinuum.org/data-browser?nodes=V008&apps=mobotix-sampler.*&window=7d)
-
-
-#### View
-
-<img src="https://raw.githubusercontent.com/sagecontinuum/sage-docs/f2e1eea4827bb0f03c534493b6b38859e4294d61/projects/neon-mdp/site-views.png" width="60%" >
