@@ -26,4 +26,4 @@
 
 #### View
 
-<img src="https://github.com/sagecontinuum/sage-docs/blob/f2e1eea4827bb0f03c534493b6b38859e4294d61/projects/neon-mdp/site-views.png" width="60%" >
+<img src="https://raw.githubusercontent.com/sagecontinuum/sage-docs/f2e1eea4827bb0f03c534493b6b38859e4294d61/projects/neon-mdp/site-views.png" width="60%" >
