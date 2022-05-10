@@ -12,13 +12,55 @@ In general, Sage sensors are desinged to be accessible from any edge application
 The Sage node is designed to accommodate sensors commonly used to support environmental science, but not limited to host other sensors. The currently supported sensors are,
 
 _NOTE: not all SAGE nodes have the same set of sensors, and the sensor configuration depends on what to capture from the environment where the node is deployed_
-- [BME680](https://sage-commons.sdsc.edu/dataset/bme680): temperature, humidity, pressure, and gas
+
+<table className="full-width">
+  <tbody>
+    <tr>
+      <td><a href="https://sage-commons.sdsc.edu/dataset/bme680">BME680</a></td>
+      <td>temperature, humidity, pressure, and gas</td>
+      <td>
+        <a href="https://portal.sagecontinuum.org/data-browser?apps=plugin-iio.*&window=h">preview</a>
+      </td>
+    </tr>
+    <tr>
+      <td><a href="https://sage-commons.sdsc.edu/dataset/rg-15">RG-15</a></td>
+      <td>rainfall</td>
+      <td><a href="https://portal.sagecontinuum.org/data-browser?apps=plugin-raingauge.*&window=h">preview</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://www.a1securitycameras.com/ets-ml1-ws.html">ETS ML1-WS</a></td>
+      <td>20-16 kHz microphone recording sound</td>
+      <td><a href="https://portal.sagecontinuum.org/data-browser?apps=plugin-audio-sampler.*&window=h">preview</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://www.a1securitycameras.com/ets-ml1-ws.html">ETS ML1-WS</a></td>
+      <td>5 MP camera with 92.1 degree horizontal and 67.2 degree vertical angle view</td>
+      <td rowSpan="4"><a href="https://portal.sagecontinuum.org/data-browser?apps=plugin-image-sampler.*&window=h">preview</a></td>
+    </tr>
+      <tr>
+      <td><a href="https://www.a1securitycameras.com/ets-ml1-ws.html">ETS ML1-WS</a></td>
+      <td>6 MP camera with 114 degree horizontal and 62 degree vertical angle view</td>
+    </tr>
+      <tr>
+      <td><a href="https://www.a1securitycameras.com/ets-ml1-ws.html">ETS ML1-WS</a></td>
+      <td>6 MP fisheye camera with 192 degree horizontal and vertical angle view</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.a1securitycameras.com/ets-ml1-ws.html">ETS ML1-WS</a></td>
+      <td>5 MP digital pan-tilt-rotate-zoom camera</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- we might want to switch back to a list when there is camera filtering in data preview?
+- [BME680](https://sage-commons.sdsc.edu/dataset/bme680): temperature, humidity, pressure, and gas ()
 - [RG-15](https://sage-commons.sdsc.edu/dataset/rg-15): rainfall
 - [ETS ML1-WS](https://www.a1securitycameras.com/ets-ml1-ws.html): 20-16 kHz microphone recording sound
 - [XNV-8080R](https://sage-commons.sdsc.edu/dataset/xnv-8080r): 5 MP camera with 92.1 degree horizontal and 67.2 degree vertical angle view
 - [XNV-8082R](https://sage-commons.sdsc.edu/dataset/xnv-8082r):  6 MP camera with 114 degree horizontal and 62 degree vertical angle view
 - [XNF-8010RV](https://sage-commons.sdsc.edu/dataset/xnf-8010rv): 6 MP fisheye camera with 192 degree horizontal and vertical angle view
 - [XNV-8081Z](https://sage-commons.sdsc.edu/dataset/xnv-8081z): 5 MP digital pan-tilt-rotate-zoom camera
+-->
 
 Any collaborators and user communities can bring up their sensors to Sage node. The node can easily host sensor devices that support serial interface as well as network interface (e.g., http, rtsp, etc). The currently supported user sensors are,
 
@@ -44,7 +86,7 @@ Sage sensors are integrated into Sage using the PyWaggle library. PyWaggle utili
 PyWaggle often provides edge applications direct access to physical sensors. For sensors that support realtime protocols like RTSP and RTP and others, PyWaggle exposes those protocols to edge applications, and it is up to the applications to process data using given protocol. For example, RTSP protocol can be handled by OpenCV's VideoCapture class inside an application. If any physical sensor device that requires a special interfacing to the device, an edge application that supports the interfacing need to run in order to publish sensor measurements to the system, and later those measurements are used by other edge applications.
 
 ## Example: sampling images from camera
-It is often important to sample images from cameras in the field to create initial dataset for a machine learning algorithm. [The example](https://github.com/waggle-sensor/pywaggle/blob/main/docs/writing-a-plugin.md#accessing-a-video-stream) describes how to access to a video stream from a camera sensor using PyWaggle. 
+It is often important to sample images from cameras in the field to create initial dataset for a machine learning algorithm. [The example](https://github.com/waggle-sensor/pywaggle/blob/main/docs/writing-a-plugin.md#accessing-a-video-stream) describes how to access to a video stream from a camera sensor using PyWaggle.
 
 ## Bring your own sensor to Sage
 Users may need to develop their own device plugin to expose the sensor to the system, or to publish measurement data from the sensor to the cloud. Unlike an edge application or software-defined sensors, device plugins communicating with a physical sensor may need special access, e.g. serial port, in order to talk to the sensor attached to Sage node. Such device plugin may need to be verified by Sage/Waggle team.

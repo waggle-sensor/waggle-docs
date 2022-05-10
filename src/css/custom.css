@@ -67,6 +67,7 @@ html[data-theme='dark'] .navbar__link--active  {
   color: #fff;
 }
 
+
 /*
  * search
  */
@@ -81,6 +82,7 @@ html[data-theme='dark'] .navbar__link--active  {
   }
 }
 
+
 /*
  * sidebar
  */
@@ -89,11 +91,29 @@ html[data-theme='dark'] .navbar__link--active  {
   margin-top: 20px;
 }
 
-/* speed up animations */
 ul.menu__list {
+  /* override to speed up animation */
   transition: height 100ms ease-in-out 0s !important;
 }
 
 .menu__link--sublist:after {
   transition: 100ms linear !important;
+}
+
+
+/**
+ * tables
+ */
+
+table {
+  display: table;
+}
+
+
+/**
+ * utility classes
+ */
+
+.full-width {
+  width: 100%;
 }
