@@ -71,9 +71,6 @@ The BWD provides a remotely controllable interface to a physical Waggle node. Th
 
 ## Support Infrastructure
 
-#### [Chameleon](https://www.chameleoncloud.org/)
-A large-scale, deeply reconfigurable experimental platform built to support Computer Sciences systems research. Community projects range from systems research developing new operating systems, virtualization methods, performance variability studies, and power management research to projects in software defined networking, artificial intelligence, and resource management.
-
 #### [Beehive](https://github.com/waggle-sensor/waggle-beehive-v2)
 
 Beehive is a cloud endpoint that offers several services for Waggle nodes and derivatives (AoT, Sage etc.)
