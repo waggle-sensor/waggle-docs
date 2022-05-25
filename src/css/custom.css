@@ -117,3 +117,8 @@ table {
 .full-width {
   width: 100%;
 }
+
+.muted {
+  opacity: 0.6;
+}
+
