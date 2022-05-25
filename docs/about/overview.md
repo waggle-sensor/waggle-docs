@@ -29,7 +29,7 @@ While anyone can be a student of Sage the most frequent users will be:
 
 ## How do I use Sage?
 
-With a basic understanding of what the [Sage project](https://sagecontinuum.org/) is, the next question is how does Sage work and how can I use Sage? This depends on your desired interaction interest. 
+With a basic understanding of what the [Sage project](https://sagecontinuum.org/) is, the next question is how does Sage work and how can I use Sage? This depends on your desired interaction interest.
 
 Sage, in it's simplest form, consists of edge compute applications which process data (ex. sensor readings, camera images, audio recordings, etc). These edge applications then produce their own data (ex. inferences) and upload the results to a cloud database. This cloud database can be accessed directly and/or additional compute can be performed on the cloud data.
 
@@ -59,4 +59,4 @@ The entry-point into learning about your interaction with Sage can be best direc
 
 ## How is the Sage cyber-infrastructure architected?
 
-If you are interested in learning more about how the Sage Cyber-infrastructure works you can head on over to the [Sage Architecture Overview](./arch-overview.md).
+If you are interested in learning more about how the Sage Cyber-infrastructure works you can head on over to the [Sage Architecture Overview](./architecture.md).
