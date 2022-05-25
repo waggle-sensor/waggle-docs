@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# Cloud & HPC computation based on data from edge
+# Cloud compute & HPC on edge data
 
 Sage provides a number of interfaces which other computing and HPC systems can build on top of. In this section, we explore some of the most common applications of Sage.
 

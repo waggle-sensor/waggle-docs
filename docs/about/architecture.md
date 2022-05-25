@@ -65,7 +65,7 @@ A library of tested and benchmarked AI@Edge codes that can run on the Waggle sof
 #### [Virtual Waggle (VW)](https://github.com/waggle-sensor/virtual-waggle)
 Virtual Waggle is a downloadable software-only programming environment for building and testing edge computing code for the Waggle framework.
 
-####  [Bench-top Waggle Driver (BWD)](https://github.com/sagecontinuum/bwd) <small className="muted">(in design)</small>
+#### [Bench-top Waggle Driver (BWD)](https://github.com/sagecontinuum/bwd) <small className="muted">(in design)</small>
 The BWD provides a remotely controllable interface to a physical Waggle node. The BWD will control as many physical attributes of the Waggle node as possible, including the serial console.  Ideally, almost everything that can be done physically, while a node sits on a desk, can be done remotely via the BWD.
 
 
