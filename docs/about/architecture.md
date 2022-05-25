@@ -79,3 +79,7 @@ A large-scale, deeply reconfigurable experimental platform built to support Comp
 Beehive is a cloud endpoint that offers several services for Waggle nodes and derivatives (AoT, Sage etc.)
 including authentication, management, configuration, data aggregation and dissemination. Beehive is hosted
 at Argonne National Laboratory.
+
+#### [Beekeeper](https://github.com/sagecontinuum/beekeeper)
+
+Beekeeper is the is an administrative cloud endpoint that all Sage nodes connect to allow Sage administrators to perform actions on the nodes such as gather health metrics, and perform software updates.
