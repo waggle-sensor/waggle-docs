@@ -1,82 +1,180 @@
 ---
+sidebar_label: Architecture
 sidebar_position: 2
 ---
 
 # Architecture
-![Figure 1: A high-level overview of the Sage Cyber-infrastructure](./images/SAGE_CI.jpg)
 
-The Sage project will design and build a new kind of national-scale reusable cyber-infrastructure to enable AI at the edge.  The illustration above shows a high-level view of the Sage CI architecture and enumerates the various software services, tools and infrastructure pieces. Below a quick summary of each of the components and their interrelationships is provided.
+The architecture of the Waggle cyberinfrastructure can be best explained by doing a Google Maps style zoom-in of the architecture. We will start by understanding the infrastructure at the highest-level first, zooming into each component to understand how all the components work together.
+
+## High-Level Infrastructure
+
+![Figure 1: High-level Node & Beehive Relationship](./images/arch_high_01.svg)
+
+The Waggle infrastucture is made up of 2 main components:
+- the [Waggle Nodes](#wagglenodes) that exist at the edge
+- the Waggle Cloud  (TODO: link to lower in this doc) that hosts services and storage systems to facilitates running [plugins](#plugin) @ the edge
+
+Every edge node maintains connections to 2 core Waggle Cloud components: 1 to a [Beehive](#beehive) and 1 to a [Beekeeper](#beekeper)
+
+### Beekeeper<a href="#beekeeper"></a>
+
+The Beekeeper is an administrative server that allows system administrators to perform actions on the nodes such as gather health metrics, and perform software updates.  All Waggle nodes "phone home" to their Beekeeper and maintain this "life-line" connection.
+
+> Details & source code: https://github.com/waggle-sensor/beekeeper
+
+### Beehive<a href="#beehive"></a>
+
+The Waggle node <-> Beehive connection is the pipeline for the science. It is over this connection that instructions for the node will be sent, in addition to how data is published into the Beehive storage systems from [plugins](#plugin) running on the nodes.
+
+The overall Waggle infrastructure supports multiple Beehives, where each Waggle nodes is associated with a single Beehive. The set of nodes associated with a Beehive creates a "project" where each "project" is separate, having its own data store, web services, etc.
+
+![Figure 2: Multiple Beehives](./images/arch_beehives_01.svg)
+
+In the example in Figure 2, there are 2 Waggle nodes associated with Beehive 1, while a single Waggle node is associated with Beehive 2.  With all Waggle nodes, in this example, being administered by a single [Beekeeper](#beekeeper).
+
+> _Note_: the example in Figure 2 shows a single Beekeeper, but a second Beekeeper could have been used for administrative isolation.
+
+> Details & source code: https://github.com/waggle-sensor/waggle-beehive-v2
+
+## Beehive Infrastructure
+
+The Waggle Beehive infrastructure contains 2 main components:
+- software services such as the [Edge Scheduler (ES)](#es), data APIs, and website hosting
+- data storage systems such as the [Data Repository (DR)](#dr) and the [Edge Code Repository (ECR)](#ecr)
+
+![Figure 3: Beehive High-level Architecture](./images/beehive_high_01.svg)
+
+The Beehive is the “command center” for interacting with the Waggle nodes at the edge. Hosting websites and interfaces allowing scientists to create [“science goals”](#sciencegoals) to run [plugins](#plugins) at the edge & browse the data produced by those plugins.
+
+![Figure 4: Beehive Infrastructure Details](./images/beehive_details_01.svg)
+
+The software services and data storage systems are deployed within a [kubernetes](https://kubernetes.io/) environment to allow for easy administration and to support running in a multiple server architecture, supporting redundancy and service replication.
+
+While the services running within Beehive are many, the following is an outline of the most vital.  Included in each of these services is both a graphical web interface in addition to [REST](https://en.wikipedia.org/wiki/Representational_state_transfer) style API interfaces.
+
+### Data Repository (DR)<a href="#dr"></a>
+
+The Data Repository is the data store for housing all the edge produced data. It consists of different storage technologies (including [influxdb](https://www.influxdata.com/)) and techniques to store simple textual data (i.e. key-value pairs) in addition to larger blobular data (i.e. audio, images, video). In addition to storage of the data, the Data Repository 
+an API interface for data access.
+
+The data store is a time-series database of key-value pairs with each entry containing metadata about how and when the data originated on the edge. Included in this metadata is the data collection timestamp, plugin version used to collect the data, the node the plugin was run on, and the specific compute unit within the node that the plugin was running on.
+
+```json
+{
+    "timestamp":"2022-06-10T22:37:47.369013647Z",
+    "name":"iio.in_temp_input",
+    "value":25050,
+    "meta":{
+        "host":"0000dca632ed6d06.ws-rpi",
+        "job":"sage",
+        "node":"000048b02d35a97c",
+        "plugin":"plugin-iio:0.6.0",
+        "sensor":"bme680",
+        "task":"iio-rpi",
+        "vsn":"W08C"
+    }
+}
+```
+
+In the above example, the value of `25050` was collected @ `2022-06-10T22:37:47.369013647Z` from the `bme680` sensor on node `000048b02d35a97c` via the `plugin-iio:0.6.0` plugin.
+
+> _Note_: see the [Access and use data](https://docs.waggle-edge.ai/docs/tutorials/accessing-data) site for more details and data access examples.
+
+> Details & source code: https://github.com/waggle-sensor/data-repository
+
+### Edge Scheduler (ES)<a href="#es"></a>
+TODO
+
+> Details & source code: https://github.com/waggle-sensor/edge-scheduler
+
+### Edge Code Repository (ECR)<a href="#ecr"></a>
+TODO
+
+for hosting edge plugins
+is a Docker registry that the edge nodes pull from when running plugins at the edge
+
+jenkins
+
+> Details & source code: https://github.com/waggle-sensor/edge-code-repository
 
 
-## Nodes
+## Waggle Nodes<a href="#wagglenodes"></a>
 
-#### [Sage Node](https://github.com/sagecontinuum/nodes)
-Any Edge node part of the Sage project.  This includes new AoT nodes, Wild Sage nodes, and Sage Blades.
+The Waggle nodes are the edge computing component of the cyberinfrastructure.  All Waggle nodes consist of 3 items:
+1. **Persisent storage** for housing downloaded plugins and caching published data before it is transferred to the node's Beehive
+2. **CPU and GPU compute modules** where plugins are executed and perform their accelerated inferences
+3. **Sensors** such as environment sensors, cameras and [LiDAR systems](https://en.wikipedia.org/wiki/Lidar)
 
-#### [Array of Things (AoT) Node](https://arrayofthings.github.io/)
-A weatherized Waggle Node designed to be installed on a street pole in the city or mounted on exterior walls.  An AoT node usually includes a sensor pod that includes air quality sensors.  The device is also attractive for an urban setting.
+![Figure 5: Waggle Node Overview](./images/node_overview_01.svg)
 
-#### [Wild Sage Node](https://github.com/sagecontinuum/nodes)
-This identifies Waggle Nodes that are weatherized for remote, outdoor deployment as part of the Sage project.  These nodes are similar to AoT nodes, but since urban aesthetics are not needed, and different cameras and sensors might be used, the Wild Sage Node may look strange.  Wild Sage Nodes look like proper bits of science experiments mounted outside, while AoT nodes look like they deserve an architectural award.
+Waggle nodes enable "at the edge" fast computation, leveraging the large non-volatile storage to handle caching of high frequency data (including images, audio and video) in the event the node is "offline" from its Beehive.  Through expansion ports the nodes support the adding and removing of sensors to fully customize the node deployment for the particular deployment environment.
 
-#### [Sage Blade](https://github.com/sagecontinuum/nodes)
-This identifies Waggle Nodes that are standard, commercially available blade server or box intended for use in a machine room or climate controlled telecommunications hut.  For the Sage project, the first Sage Blades are Dell XR2 1U servers that have been hardened for increased environmental range. They include a powerful NVIDIA GPU for AI@Edge compute jobs.  As a Waggle Node, they run the complete Waggle software stack, and therefore can run Edge jobs, report data, and be remotely configured.
+Overall, even though the nodes may use different CPU architectures and different sensor configurations, they all leverage the same [Waggle Edge Stack (WES)](#wes) to run plugins.
 
-#### [Waggle Node](https://github.com/waggle-sensor/waggle)
-This slang indicates that an AI@Edge computer is running the Waggle software stack.  It is similar to saying “It is a Linux Box”.  The Linux box could be running a web server or a database, but is running the core Linux software stack.  “A Waggle Node” runs the Waggle encrypted and reliable messaging layers, configuration system, resilience components, adheres to the Waggle security model, provides the AI@Edge runtime libraries, and provides the resource management components to schedule and run Edge docker containers from the Edge Code Repository.
+> Details & source code: https://github.com/waggle-sensor/wild-waggle-node
 
+### Wild Waggle Node<a href="#wildnode"></a>
 
-## Software infrastructure
+The Wild Waggle Node is a custom built weather-proof enclosure intended for remote outdoor installation. The node features software and hardware resilience via the [custom Waggle operating system](https://github.com/waggle-sensor/wildnode-image) and [custom Wagman circuit board](https://github.com/waggle-sensor/wagman). Internal to the node is a power supply and PoE network switch supporting the addition of sensors through standard Ethernet (POE), USB and other embedded protocols via the node expansion ports.
 
-#### [Sage Core Services (SCS)](https://github.com/sagecontinuum/bic)
-To deliver the Sage Cyberinfrastructure, a set of essential components and tools provide data APIs, authentication, and management services to the entire framework.  This includes: Storage & Storage API, Authorization Service, User Management and Authentication, Sage Continuous Integration, Public Streaming Service, and Sage Web Portal.
+![Figure 6: Wild Waggle Node Overview](./images/node_wild_01.svg)
 
-#### [Waggle Edge Stack (WES)](https://github.com/waggle-sensor/waggle-edge-stack)
-The WES includes the operating system image and Waggle services running on the NC and EP as well as the ML run-time libraries and tools. It also manages cybersecurity, certificate management, and manages system resources, such as power, memory, and cores. It constantly updates its state with the cloud server to fetch and perform any task scheduled from SES.
+The unit consists of:
+- NVidia Xavier NX ARM64 [Node Controller](https://github.com/waggle-sensor/nodecontroller-arm64) w/ 8GB of shared CPU/GPU RAM
+- 1 TB of NVMe storage
+- 4x PoE expansion ports
+- 1x USB2 expansion port
+- optional [Stevenson Shield](https://en.wikipedia.org/wiki/Stevenson_screen) housing a RPi 4 w/ environmental sensors & microphone
+- optional 2nd NVidia Xavier NX ARM64 Edge Processor
 
-#### [Sage Edge Scheduler (SES)](https://github.com/sagecontinuum/ses)
-All configuration changes, whether they be software updates or new edge computing algorithms are handled by the SES. Users who have edge code already running and deployed on Waggle nodes can use their authentication token to push configuration changes to nodes via the SES. Users can also submit “jobs” that can be scheduled and run on nodes at a later time. The SES makes all configuration and system update decisions, and queues up changes that can be pushed out to nodes when they contact Beehive.
+> Manual: https://docs.waggle-edge.ai/docs/about/resources/wsn-manual
 
-#### [Sage Lambda Triggers (SLT)](https://github.com/sagecontinuum/slt) <small className="muted">(in design)</small>
-The SLT provides a framework for two kinds of triggers: From-Edge and To-Edge. A value or message from a Waggle edge node, delivered to Beehive, can be used to trigger a lambda function -- for example, if high wind velocity is detected, a function could be triggered to determine how to reconfigure sensors or launch a computation or send an alert. Similarly, an HPC calculation or cloud-based data analysis could trigger an API call to the SES and send a notification to a Waggle edge node -- for example to request scheduling of new edge computations or reposition mobile assets.
+> Details & source code: https://github.com/waggle-sensor/wild-waggle-node
 
-#### [Cloud Training Software Stack (CTSS)](https://github.com/sagecontinuum/ctss) <small className="muted">(in design)</small>
-CTSS will provide interfaces (CTSS Training Environment and CTSS API Client) and documentation with end-to-end examples for users to allow them to build and bundle the components necessary to test on a Virtual Waggle and then on a Sage Node. It can be run on the cloud or as a downloadable software.
+### Waggle Blade Node<a href="#nodeblade"></a>
 
+The Waggle Blade Node is a standard commercially available server intended for us in a climate controlled machine room, or extended temperature range telecom-grade blades for harsher environments. The [AMD64 based Waggle operating system](https://github.com/waggle-sensor/blade-image) supports these types of nodes, enabling the services needed to support [WES](#wes).
 
-## Data
+![Figure 7: Waggle Blade Node Overview](./images/node_blade_01.svg)
 
-#### [Sage Data Repository (SDR)](https://github.com/waggle-sensor/waggle-beehive-v2)
-Accessed via the [Sage Data API](docs/tutorials/accessing-data), Sage data is made open for research wherever possible.  Some training data sets may require data-usage agreements to adhere to privacy guidelines or for operational security.  However all sensor data and AI@Edge inference results are intended to be open and immediately shared in near-real time via the SDR. The SDR aggregates all data collected by Sage Nodes and provides web-based tools for extracting (slicing and dicing) relevant data components or viewing the data on map tools (previously known as BDR).
+The above diagram shows the basic configuration of a Waggle Blade Node:
+- Multi-core ARM64 Node Controller
+- 32GB of RAM
+- Dedicated NVida T4 GPU
+- 1 TB of SSD storage
 
-#### [Sage Object Store / Open Storage Network](https://github.com/sagecontinuum/sage)
+> _Note_: it is possible to add the same optional [Stevenson Shield](https://en.wikipedia.org/wiki/Stevenson_screen) housing that is available to the [Wild Waggle Nodes](#wildnode)
 
-The Sage Object Store API enables storing of larger objects (files), such as images, audio, and data sets.  When an object is stored via an ECR application, a reference to these files are kept in SDR and can be accessed via the [Object Store API](/docs/tutorials/accessing-data#accessing-large-files-ie-training-data).
+> Details & source code: https://github.com/waggle-sensor/waggle-blade
 
+## Running Applications @ the Edge
 
-## Edge Code Repository
+Included in the Waggle operating systems are the core components necessary to enable running plugins @ the edge.  At the heart of this is [k3s](https://k3s.io/), which creates a protected & isolated run-time environment. This environment combined with the tools and services provided by [WES](#wes) enable plugin access to the node's CPU, GPU, sensors and cameras.
 
-#### [Edge Code Repository (ECR)](https://github.com/sagecontinuum/sage-ecr)
-A library of tested and benchmarked AI@Edge codes that can run on the Waggle software stack.  The ECR provides a verified and versioned repository of AI@Edge docker images that can be pushed by the Beehive to Sage Nodes and executed.  [View public apps on portal](https://portal.sagecontinuum.org/apps/explore).
+### Waggle Edge Stack (WES)<a href="#wes"></a>
 
+The Waggle Edge Stack is the set of core services running within the Node's [k3s](https://k3s.io/) run-time environment that supports all the features that plugins need to run on the Waggle nodes. The WES services coordinate with the core [Beehive](#beehive) services to download & run scheduled plugins (including load balancing) and facilitate uploading plugin published data to the Beehive [data repository](#dr). Through abstraction technologies and WES provided tools, plugins have access to sensor and camera data.
 
-## Utilities
+![Figure 8: Waggle Edge Stack Overview](./images/wes_overview_01.svg)
 
-#### [Virtual Waggle (VW)](https://github.com/waggle-sensor/virtual-waggle)
-Virtual Waggle is a downloadable software-only programming environment for building and testing edge computing code for the Waggle framework.
+The above diagram demonstrates 2 plugins running on a Waggle node.  Plugin 1 ("neon-kafka") is an example plugin that is running alongside Plugin 2 ("data-smooth"). In this example, "neon-kafka" (via the WES tools) is reading metrics from the node's sensors and then publishing that data within the WES run-time environment (internal to the node). 
+At the same time, the "data-smooth" plugin is subscribing to this data stream, performing some sort of inference and then publishing the inference results (via WES tools) to Beehive.
 
-#### [Bench-top Waggle Driver (BWD)](https://github.com/sagecontinuum/bwd) <small className="muted">(in design)</small>
-The BWD provides a remotely controllable interface to a physical Waggle node. The BWD will control as many physical attributes of the Waggle node as possible, including the serial console.  Ideally, almost everything that can be done physically, while a node sits on a desk, can be done remotely via the BWD.
+> _Note_: see [Developing new edge applications](https://docs.waggle-edge.ai/docs/tutorials/compute-at-edge#developing-new-edge-applications) for a guide on how to create a Waggle plugin.
 
+> Details & source code: https://github.com/waggle-sensor/waggle-edge-stack
 
-## Support Infrastructure
+### What is a plugin<a href="#plugin"></a>
+TODO
 
-#### [Beehive](https://github.com/waggle-sensor/waggle-beehive-v2)
+- links ot [how to create plugins](https://docs.waggle-edge.ai/docs/tutorials/compute-at-edge)
+- links to ECR portal in github
+- link to example Sage app store
 
-Beehive is a cloud endpoint that offers several services for Waggle nodes and derivatives (AoT, Sage etc.)
-including authentication, management, configuration, data aggregation and dissemination. Beehive is hosted
-at Argonne National Laboratory.
+#### Science Goals<a href="#sciencegoals"></a>
+TODO
 
-#### [Beekeeper](https://github.com/sagecontinuum/beekeeper)
+- links to [how to schedule a plugin for deployment](https://docs.waggle-edge.ai/docs/tutorials/compute-at-edge#schedule-plugin-for-deployment)
 
-Beekeeper is the is an administrative cloud endpoint that all Sage nodes connect to allow Sage administrators to perform actions on the nodes such as gather health metrics, and perform software updates.
+Wip
