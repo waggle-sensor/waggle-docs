@@ -3,22 +3,22 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: 'Sage',
-  tagline: 'Cyberinfrastructure for AI at the Edge',
-  url: 'https://docs.sagecontinuum.org',
+  title: 'Waggle Docs',
+  tagline: 'AI at the Edge',
+  url: 'https://docs.waggle-edge.ai',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/sage-favicon.png',
-  organizationName: 'sagecontinuum',
-  projectName: 'sage-docs',
+  organizationName: 'waggle-sensor',
+  projectName: 'waggle-docs',
   trailingSlash: false,
   themeConfig: {
     navbar: {
-      title: 'Sage',
+      title: 'Waggle',
       logo: {
-        alt: 'Sage Logo',
-        src: 'img/logo.png',
+        alt: 'Waggle',
+        src: '_need_waggle_logo_',
         href: '/docs/about/overview',
       },
       items: [
@@ -103,13 +103,13 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/sagecontinuum/sage-docs/edit/main/',
+            'https://github.com/waggle-sensor/waggle-docs/edit/main/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/sagecontinuum/sage-docs/edit/main/',
+            'https://github.com/waggle-sensor/waggle-docs/edit/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
