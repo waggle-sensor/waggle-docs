@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[535],{5641:function(e){e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Argonne\'s Big Data Camp Goes Virtual","permalink":"/blog/big-data"}]}')}}]);
