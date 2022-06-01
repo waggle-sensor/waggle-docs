@@ -2,7 +2,7 @@
 # Required Documentation Meta
 
 
-A Sage doc's metadata should be in yaml format at the top of a document as follows
+A Waggle doc's metadata should be in yaml format at the top of a document as follows
 
 
 ```text
