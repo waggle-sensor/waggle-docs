@@ -1,10 +1,9 @@
-# Sage Tutorials and Documentation
+# Waggle Documentation and Tutorials
 
-Check back later for new tutorials about Sage.
 
 ## Writing Docs
 
-* [The Format of a Sage Tutorial/Doc](./writing-docs/doc-format.md)
+* [The Format of a Tutorial/Doc](./writing-docs/doc-format.md)
 * [Using Markdown](./writing-docs/using-markdown.md)
 
 
