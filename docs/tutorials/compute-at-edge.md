@@ -6,11 +6,15 @@ sidebar_position: 2
 
 ## Introduction to edge applications
 
-Sage nodes run edge applications (i.e. __plugins__) to process data. A plugin is a self-contained program which typically reads sensors, audio or video data, does some processing and then publishes information derived from that data.
+The nodes run edge applications (i.e. __plugins__) to process data. A plugin is a self-contained program which typically reads sensors, audio or video data, does some processing and then publishes information derived from that data.
 
 The most basic example of a plugin is one which reads and publishes a value from a sensor. A more complex plugin could publish the number of birds in a scene using a deep learning model.
 
 ![Basic Plugin](./images/plugin-basic.svg)
+
+Plugins as composed of code, models and dependencies which are then packaged as container images that can be scheduled on nodes.
+
+![Running Plugin](./images/plugin-run.svg)
 
 Plugins fit into the wider Sage infrastructure by being added to the [Edge Code Repository](https://portal.sagecontinuum.org), deployed to nodes and publishing data to our Sage Data Repository.
 
