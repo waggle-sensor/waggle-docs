@@ -16,9 +16,15 @@ Plugins are composed of code, models and dependencies which are then packaged as
 
 ![Running Plugin](./images/plugin-run.svg)
 
-Plugins fit into the wider Sage infrastructure by being added to the [Edge Code Repository](https://portal.sagecontinuum.org), deployed to nodes and publishing data to our Sage Data Repository.
+Finally, the plugin development workflow follows the three primarly states illustrated below:
 
-![Plugins in Sage](./images/plugin-sage.svg)
+![Running Plugin](./images/plugin-workflow.svg)
+
+First, **data and model selection** is where you scope the problem and identify a new or existing model for your application. This typically happens _outside_ of our ecosystem.
+
+Second, **develop and test** is where you begin to integrate your initial code with our ecosystem, test and finally build your application in ECR.
+
+Finally, **deploy and iterate** is where you schedule your application for deployment and look at the results.
 
 ## Exploring existing edge applications
 
