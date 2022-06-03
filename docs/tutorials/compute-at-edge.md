@@ -12,7 +12,7 @@ The most basic example of a plugin is one which reads and publishes a value from
 
 ![Basic Plugin](./images/plugin-basic.svg)
 
-Plugins as composed of code, models and dependencies which are then packaged as container images that can be scheduled on nodes.
+Plugins are composed of code, models and dependencies which are then packaged as container images that can be scheduled on nodes.
 
 ![Running Plugin](./images/plugin-run.svg)
 
