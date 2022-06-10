@@ -16,11 +16,6 @@ module.exports = {
   themeConfig: {
     navbar: {
       title: 'Waggle',
-      logo: {
-        alt: 'Waggle',
-        src: '_need_waggle_logo_',
-        href: '/docs/about/overview',
-      },
       items: [
         {
           to: '/docs/about/overview',
@@ -59,23 +54,20 @@ module.exports = {
           items: [
             {
               label: 'About',
-              to: '/docs/about/overview',
+              to: '/docs/about/overview'
             },
-          ],
-        },
-        /*
-        {
-          title: 'example',
-          items: [
             {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              label: 'Tutorials',
+              to: '/docs/category/tutorials'
+            },
+            {
+              label: 'Get Support',
+              to: '/docs/contact-us'
             },
           ],
         }
-        */
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Sage`,
+      copyright: `Copyright © ${new Date().getFullYear()} Waggle`,
     },
     prism: {
       theme: lightCodeTheme,

@@ -12,13 +12,13 @@
 
 
 :root {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: rgb(33, 175, 144);
-  --ifm-color-primary-darker: rgb(31, 165, 136);
-  --ifm-color-primary-darkest: rgb(26, 136, 112);
-  --ifm-color-primary-light: rgb(70, 203, 174);
-  --ifm-color-primary-lighter: rgb(102, 212, 189);
-  --ifm-color-primary-lightest: rgb(146, 224, 208);
+  --ifm-color-primary: #0080c7;
+  --ifm-color-primary-dark: #0073b3;
+  --ifm-color-primary-darker: #006da9;
+  --ifm-color-primary-darkest: #005a8b;
+  --ifm-color-primary-light: #008ddb;
+  --ifm-color-primary-lighter: #0093e5;
+  --ifm-color-primary-lightest: #04a5ff;
   --ifm-code-font-size: 95%;
 
   --ifm-navbar-height: 60px;
@@ -26,8 +26,8 @@
   --ifm-navbar-padding-horizontal: 20px;
   --ifm-navbar-link-hover-color: #000;
 
+  --ifm-heading-color: #2B3C4D;
   font-family: 'Roboto';
-
 }
 
 .docusaurus-highlight-code-line {
@@ -49,7 +49,7 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   font-size: 30.8px;
   font-family: "Open sans", sans-serif;
   font-weight: 800;
-  color: rgb(135, 186, 166);
+  color: #2b3c4d;
   margin-bottom: 2px;
   padding-right: 20px;
   padding-left: 2px;
