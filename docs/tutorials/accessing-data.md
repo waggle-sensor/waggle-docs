@@ -9,9 +9,9 @@ sidebar_position: 3
 
 Raw sensor data is collected by edge code. This edge code can either talk to sensor hardware directly or may obtain data from an abstraction layer (not show in image above). Edge code may forward unprocessed sensor data, do light processing to convert raw sensor values into final data products, or may use CPU/GPU-intensive workloads (e.g. AI application) to extract information from data-intensive sensors such as cameras, microphone or LIDAR.  
 
-Sensor data from nodes that comes in numerical or textual form (e.g. temperature) is stored natively in our time series database. Sensor data in form of large files (images, audio, movies..) is stored in the Sage object store, but is referenced in the time series data (thus the dashed arrow in the figure above). Thus, the primary way to find all data (sensor and large files) is via the Sage sensor query API described below.
+Sensor data from nodes that comes in numerical or textual form (e.g. temperature) is stored natively in our time series database. Sensor data in form of large files (images, audio, movies..) is stored in the Waggle object store, but is referenced in the time series data (thus the dashed arrow in the figure above). Thus, the primary way to find all data (sensor and large files) is via the Waggle sensor query API described below.
 
-Currently the Sage sensor database contains data such as:
+Currently the Waggle sensor database contains data such as:
 
 - relative humidity, barometric pressure, ambient temperature and gas (VOC) [BME680](https://www.bosch-sensortec.com/products/environmental-sensors/gas-sensors/bme680/)
 - rainfall measurements [(Hydreon RG-15)](https://sage-commons.sdsc.edu/dataset/rg-15) 
@@ -23,7 +23,7 @@ Data can be accessed via "data bundles"  or the query API.
 
 ## Restricted access files
 
-While almost all Sage data is open, some types of data requires a written Data Use Agreement for access.  This includes raw image and audio data taken from certain locations. Please [contact us](mailto:support@sagecontinuum.org) if you are interested in access. The sensor log (see Query API) contains references to both restricted and unrestricted files. Downloading restricted files without authorization will return a `401 Unauthorized`.
+While almost all Waggle data is open, some types of data requires a written Data Use Agreement for access.  This includes raw image and audio data taken from certain locations. Please [contact us](mailto:support@sagecontinuum.org) if you are interested in access. The sensor log (see Query API) contains references to both restricted and unrestricted files. Downloading restricted files without authorization will return a `401 Unauthorized`.
 
 ## Data Bundles
 
@@ -33,7 +33,7 @@ Data Bundles are compiled nightly and may be downloaded in [this archive](https:
 
 ## Data API
 
-The Sage **data API** provides immediate and flexible access to sensor data via search over time and metadata tags. It is primarily intended to support exploratory and near real time use cases.
+The Waggle **data API** provides immediate and flexible access to sensor data via search over time and metadata tags. It is primarily intended to support exploratory and near real time use cases.
 
 Due to the wide variety of possible queries, we do not attempt to provide DOIs for results from the data API. Instead, we leave it up to users to organize and curate datasets for their own applications. Long term, curated data is instead provided via **Data Bundles**.
 
@@ -84,7 +84,7 @@ More details on how to use the query API can be found [here](https://github.com/
 A detailed description of the data model can be found [here](https://github.com/waggle-sensor/waggle-beehive-v2/blob/main/docs/querying-measurements.md#data-model).
 
 ## Accessing large files (i.e. training data)
-SAGE collects large files for AI training purposes. These files stored in an S3 bucket hosted by the [Open Storage Network](https://www.openstoragenetwork.org/).
+Waggle collects large files for AI training purposes. These files stored in an S3 bucket hosted by the [Open Storage Network](https://www.openstoragenetwork.org/).
 
 To find these files use the filter `"name":"upload"` and specify additional filters to limit search results, for example:
 

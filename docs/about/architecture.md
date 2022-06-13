@@ -170,7 +170,7 @@ TODO
 
 - links ot [how to create plugins](https://docs.waggle-edge.ai/docs/tutorials/compute-at-edge)
 - links to ECR portal in github
-- link to example Sage app store
+- link to example Waggle app store
 
 #### Science Goals<a href="#sciencegoals"></a>
 TODO

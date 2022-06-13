@@ -4,13 +4,13 @@ sidebar_position: 4
 
 # Cloud compute & HPC on edge data
 
-Sage provides a number of interfaces which other computing and HPC systems can build on top of. In this section, we explore some of the most common applications of Sage.
+Waggle provides a number of interfaces which other computing and HPC systems can build on top of. In this section, we explore some of the most common applications of Waggle.
 
 ## Triggering on data from the edge
 
 A common application is monitoring data from the edge and triggering actions when values exceed a threshold or an unusual event is detected.
 
-As a getting started example, we demonstrate an outline of how this can be done in Sage using the [Sage data client](https://github.com/sagecontinuum/sage-data-client).
+As a getting started example, we demonstrate an outline of how this can be done in Waggle using the [Sage data client](https://github.com/sagecontinuum/sage-data-client).
 
 ```python
 import sage_data_client
