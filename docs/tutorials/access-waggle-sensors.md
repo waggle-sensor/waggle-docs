@@ -2,16 +2,16 @@
 sidebar_position: 1
 ---
 
-# Access Sage sensors
-A Sage sensor is an entity that produces measurements of a phenomenon and that helps users analyze what is happening in the environment. There are sensors already hosted by Sage and also sensors that are being integrated into Sage as a user-hosted sensor. A sensor does not necessarily mean a physical device, but can be a program producing measurements from data -- we call it __software-defined sensor__. Once those sensors become available in Sage nodes edge applications running inside the nodes can pull measurements from the sensors to process them.
+# Access Waggle sensors
+A Waggle sensor is an entity that produces measurements of a phenomenon and that helps users analyze what is happening in the environment. There are sensors already hosted by Waggle and also sensors that are being integrated into Waggle as a user-hosted sensor. A sensor does not necessarily mean a physical device, but can be a program producing measurements from data -- we call it __software-defined sensor__. Once those sensors become available in Waggle nodes edge applications running inside the nodes can pull measurements from the sensors to process them.
 
-In general, Sage sensors are desinged to be accessible from any edge applications running on the Sage node that hosts the sensors, but can be limited their access to groups and personnel. For example, a pan-tilt-zoom featured camera may be only accessed from authorized applications in order to prevent other applications from operating the camera. Ideally, Sage sensors can form and support the Sage ecosystem where sensor measurements are integrated and used by edge applications for higher level computation and complex decision making.
+In general, Waggle sensors are desinged to be accessible from any edge applications running on the Waggle node that hosts the sensors, but can be limited their access to groups and personnel. For example, a pan-tilt-zoom featured camera may be only accessed from authorized applications in order to prevent other applications from operating the camera. Ideally, Waggle sensors can form and support the Waggle ecosystem where sensor measurements are integrated and used by edge applications for higher level computation and complex decision making.
 
-## Sage physical sensors
-![Figure 1: Sensors of Sage node](./images/Sage_Node.jpg)
-The Sage node is designed to accommodate sensors commonly used to support environmental science, but not limited to host other sensors. The currently supported sensors are,
+## Waggle physical sensors
+![Figure 1: Sensors of Waggle node](./images/waggle_node.jpg)
+The Waggle node is designed to accommodate sensors commonly used to support environmental science, but not limited to host other sensors. The currently supported sensors are,
 
-_NOTE: not all SAGE nodes have the same set of sensors, and the sensor configuration depends on what to capture from the environment where the node is deployed_
+_NOTE: not all Waggle nodes have the same set of sensors, and the sensor configuration depends on what to capture from the environment where the node is deployed_
 
 <table className="full-width">
   <tbody>
@@ -62,33 +62,33 @@ _NOTE: not all SAGE nodes have the same set of sensors, and the sensor configura
 - [XNV-8081Z](https://sage-commons.sdsc.edu/dataset/xnv-8081z): 5 MP digital pan-tilt-rotate-zoom camera
 -->
 
-Any collaborators and user communities can bring up their sensors to Sage node. The node can easily host sensor devices that support serial interface as well as network interface (e.g., http, rtsp, etc). The currently supported user sensors are,
+Any collaborators and user communities can bring up their sensors to Waggle node. The node can easily host sensor devices that support serial interface as well as network interface (e.g., http, rtsp, etc). The currently supported user sensors are,
 
-_NOTE: those sensors may not be available on all SAGE nodes as it depends on what SAGE nodes need to host them_
+_NOTE: those sensors may not be available on all Waggle nodes as it depends on what Waggle nodes need to host them_
 - Software-defined Radio: detecting raindrops and snow flakes
 - Radiation detector: radiation detector
 - LIDAR: distance of nearby objects
 - Mobotics: infrared camera
 
-_TODO: add links for the user sensors and also link where users find detailed resource to add their sensor to Sage_
+_TODO: add links for the user sensors and also link where users find detailed resource to add their sensor to Waggle_
 
-## Sage software-defined sensors
-Software-defined sensors are limitless as edge applications define them. You can start building your edge application that publishes outputs using [PyWaggle's basic example](https://github.com/waggle-sensor/pywaggle/blob/main/docs/writing-a-plugin.md#basic-example) that can become a software-defined sensor. Later, such outputs can be consumed by other edge applications to produce higher level information about the measurements. A few example of Sage software-defined sensors are,
+## Waggle software-defined sensors
+Software-defined sensors are limitless as edge applications define them. You can start building your edge application that publishes outputs using [PyWaggle's basic example](https://github.com/waggle-sensor/pywaggle/blob/main/docs/writing-a-plugin.md#basic-example) that can become a software-defined sensor. Later, such outputs can be consumed by other edge applications to produce higher level information about the measurements. A few example of Waggle software-defined sensors are,
 
 - [Object Counter](https://portal.sagecontinuum.org/apps/app/theone/objcounter): `env.count.OBJECT` counts objects from an image, where `OBJECT` is the object name that is recognized
 - [Cloud Coverage Estimator](https://portal.sagecontinuum.org/apps/app/seonghapark/cloudcover-unet): `env.coverage.cloud` provides a percentage of cloud covered in an image
 
-## Access to Sage sensors
-![Figure 2: Access to sage sensors](./images/access_to_sensors.svg)
+## Access to Waggle sensors
+![Figure 2: Access to Waggle sensors](./images/access_to_sensors.svg)
 
-Sage sensors are integrated into Sage using the PyWaggle library. PyWaggle utilizes AMQP, [the message publishing and subscribing mechanism](https://www.amqp.org), to support exchanging sensor measurements between device plugins and edge applications. An edge application can subscribe and process those measurements using [PyWaggle's subscriber](https://github.com/waggle-sensor/pywaggle/blob/main/docs/writing-a-plugin.md#subscribing-to-other-measurements). The application then produces its output and publishes it as a measurement back to the system using [PyWaggle publisher](https://github.com/waggle-sensor/pywaggle/blob/main/docs/writing-a-plugin.md#more-about-the-publish-function).
+Waggle sensors are integrated into Waggle using the PyWaggle library. PyWaggle utilizes AMQP, [the message publishing and subscribing mechanism](https://www.amqp.org), to support exchanging sensor measurements between device plugins and edge applications. An edge application can subscribe and process those measurements using [PyWaggle's subscriber](https://github.com/waggle-sensor/pywaggle/blob/main/docs/writing-a-plugin.md#subscribing-to-other-measurements). The application then produces its output and publishes it as a measurement back to the system using [PyWaggle publisher](https://github.com/waggle-sensor/pywaggle/blob/main/docs/writing-a-plugin.md#more-about-the-publish-function).
 
 PyWaggle often provides edge applications direct access to physical sensors. For sensors that support realtime protocols like RTSP and RTP and others, PyWaggle exposes those protocols to edge applications, and it is up to the applications to process data using given protocol. For example, RTSP protocol can be handled by OpenCV's VideoCapture class inside an application. If any physical sensor device that requires a special interfacing to the device, an edge application that supports the interfacing need to run in order to publish sensor measurements to the system, and later those measurements are used by other edge applications.
 
 ## Example: sampling images from camera
 It is often important to sample images from cameras in the field to create initial dataset for a machine learning algorithm. [The example](https://github.com/waggle-sensor/pywaggle/blob/main/docs/writing-a-plugin.md#accessing-a-video-stream) describes how to access to a video stream from a camera sensor using PyWaggle.
 
-## Bring your own sensor to Sage
-Users may need to develop their own device plugin to expose the sensor to the system, or to publish measurement data from the sensor to the cloud. Unlike an edge application or software-defined sensors, device plugins communicating with a physical sensor may need special access, e.g. serial port, in order to talk to the sensor attached to Sage node. Such device plugin may need to be verified by Sage/Waggle team.
+## Bring your own sensor to Waggle
+Users may need to develop their own device plugin to expose the sensor to the system, or to publish measurement data from the sensor to the cloud. Unlike an edge application or software-defined sensors, device plugins communicating with a physical sensor may need special access, e.g. serial port, in order to talk to the sensor attached to Waggle node. Such device plugin may need to be verified by the Waggle team.
 
-To integrate your sensor device into Sage, contact Sage at support@sagecontinuum.org
+To integrate your sensor device into Waggle, head over to the [Contact Us](../contact-us.md) page
