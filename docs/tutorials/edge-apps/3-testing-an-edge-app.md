@@ -152,7 +152,7 @@ You should see some results like:
 
 These are exactly the mean color values we computed and published!
 
-Note that this is intended to be a quick preview of how to access data. If you are interested, we cover this topic in much depth [here](../accessing-data).
+This is intended to be a quick preview of how to access data to help get you started. If you are interested, we cover this topic in much depth [here](../accessing-data).
 
 ## Next steps
 
