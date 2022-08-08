@@ -22,7 +22,7 @@ Second, **develop and test** is where you begin to integrate your initial code w
 
 Finally, **deploy and iterate** is where you schedule your application for deployment and look at the results.
 
-## Preparing an example for edge
+## Preparing an example for the edge
 
 In order to illustrate progress through each of these stages, we'll start with a concrete code example and iterate on it over the next few sections.
 
@@ -58,11 +58,13 @@ This code above is a great start but needs a few improvements before it's ready 
 
 ### Installing pywaggle
 
-The first step in preparing an edge app for Waggle is to install [pywaggle](https://github.com/waggle-sensor/pywaggle). pywaggle is our Python SDK which provides edge apps access to devices (ex. cameras and microphones) and messaging within a node.
+The first step in preparing our example for the edge is to install [pywaggle](https://github.com/waggle-sensor/pywaggle) in your local development environment.
+
+pywaggle is our Python SDK which provides edge apps access to devices (ex. cameras and microphones) and messaging within a node.
 
 ![Accessing Devices](../images/access_to_sensors.svg)
 
-For this tutorial, we will install the latest version of pywaggle with all optional dependencies using:
+For this tutorial, we'll install the latest version of pywaggle with all optional dependencies in our local development environment using:
 
 ```sh
 pip3 install 'pywaggle[all]'
@@ -114,7 +116,7 @@ _You're exact numbers may differ as this is computed using your default camera._
 
 ### Publishing results
 
-The next change we'll make is to publish our data instead of just print it. This will allow it to be sent to a beehive when it's scheduled on a node.
+The next change we'll make is to publish our data to the [Beehive Data Repository](/docs/about/architecture#data-repository-dr) instead of just print it. This will allow it to be sent to a Beehive once it's scheduled on a node.
 
 ```python
 import numpy as np
