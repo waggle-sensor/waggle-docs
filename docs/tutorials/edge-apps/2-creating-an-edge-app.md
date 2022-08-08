@@ -186,7 +186,7 @@ If we run `python3 main.py` again, then we'll see new data appended to that file
 
 This provides a convenient way to understand the behavior of an app, particularly one with a more complicated flow.
 
-### Uploading a sample
+### Uploading a snapshot
 
 Finally, the last change we'll make is to upload our snapshots after publishing the mean color.
 
