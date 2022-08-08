@@ -24,7 +24,7 @@ Edge apps are composed of code, dependencies and models which are packaged so th
 
 One of the major goals of Waggle is to provide the science community with a diverse catalog of edge apps to enable the sharing of new research. This catalog is maintained as part of the [Edge Code Repository](https://portal.sagecontinuum.org) where you can find more background information and links to their source repos.
 
-We encourage users to explore the [ECR](https://portal.sagecontinuum.org) to get familiar with existing apps as well a references if you develop your own edge app.
+We encourage users to explore the [ECR](/docs/about/architecture#edge-code-repository-ecr) to get familiar with existing apps as well a references if you develop your own edge app.
 
 ## Next steps
 

@@ -8,9 +8,7 @@ In [part 1](intro-to-edge-apps), we showed an overview of what edge apps are and
 
 ## Prerequisites
 
-We'll assume the reader has some development experience in Python and tools like git for version control.
-
-If this describes you well, please proceed to the next section. Otherwise, feel free to follow along but we will primarily focus on explaining edge app specific details.
+We'll assume the reader has some experience in [Python](https://www.python.org) for development and [git](https://git-scm.com) for version control.
 
 ## Development workflow
 
@@ -20,7 +18,7 @@ In the next few parts of this tutorial, we'll deep dive into the following app d
 
 First, **data and model selection** is where you scope the problem and identify a new or existing model for your application. This typically happens _outside_ of our ecosystem.
 
-Second, **develop and test** is where you begin to integrate your initial code with our ecosystem, test and finally build your application in ECR.
+Second, **develop and test** is where you begin to integrate your initial code with our ecosystem, test and finally build your application in [ECR](/docs/about/architecture#edge-code-repository-ecr).
 
 Finally, **deploy and iterate** is where you schedule your application for deployment and look at the results.
 
