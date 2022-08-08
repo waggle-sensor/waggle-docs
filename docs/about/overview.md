@@ -42,10 +42,10 @@ The entry-point into learning about your interaction with Waggle can be best dir
 - Do you have a new sensor that you want to write an edge application for?
 
 
-[How do I compute at the edge?](../tutorials/compute-at-edge.md)
-- Want to know how to create an edge compute application?
-- Want to know how your edge application can get access to edge sensor data?
-- Want to share my edge compute data with other edge applictions?
+[How do I run edge apps?](../tutorials/edge-apps/intro-to-edge-apps)
+- Want to know how to create an edge app?
+- Want to know how your edge app can get access to edge sensor data?
+- Want to share my edge app data with other edge applictions?
 - Want to know how to upload data to the cloud?
 
 [How do I access and use data?](../tutorials/accessing-data.md)
