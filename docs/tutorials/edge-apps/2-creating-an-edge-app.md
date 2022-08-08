@@ -8,7 +8,7 @@ In [part 1](intro-to-edge-apps), we showed an overview of what edge apps are and
 
 ## Prerequisites
 
-We'll assume the reader has some experience in [Python](https://www.python.org) for development and [git](https://git-scm.com) for version control.
+We'll assume that your local development environment is a laptop or device with a camera or webcam attached. The reader should have some basic development experience in [Python](https://www.python.org) and with [git](https://git-scm.com) for version control.
 
 ## Development workflow
 
