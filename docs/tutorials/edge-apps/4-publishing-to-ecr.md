@@ -4,7 +4,11 @@ sidebar_position: 4
 
 # Part 4: Publishing to ECR
 
-Now that we've finish [preparing our code](creating-an-edge-app) and [testing it](testing-an-edge-app), we're ready to publish it to the [Edge Code Repository](https://portal.sagecontinuum.org).
+Now that we've finished [preparing our code](creating-an-edge-app) and [testing it](testing-an-edge-app), we're ready to publish it to the [Edge Code Repository](https://portal.sagecontinuum.org)!
+
+TODO! We will expand on this soon!
+
+<!--
 
 The following steps are required to submit a plugin to ECR.
 

@@ -4,9 +4,11 @@ sidebar_position: 2
 
 # Part 2: Creating an edge app
 
+In [part 1](intro-to-edge-apps), we showed an overview of what edge apps are and how they fit into the Waggle ecosystem. Now, we'll dive right in and start writing our very own edge app!
+
 ## Prerequisites
 
-We will assume the reader has some development experience in Python and with git for version control.
+We'll assume the reader has some development experience in Python and tools like git for version control.
 
 If this describes you well, please proceed to the next section. Otherwise, feel free to follow along but we will primarily focus on explaining edge app specific details.
 
@@ -24,7 +26,9 @@ Finally, **deploy and iterate** is where you schedule your application for deplo
 
 ## Preparing an example for edge
 
-In order to better illustrate progress through each of these stages, we'll prepare the following example for edge over the next few sections.
+In order to illustrate progress through each of these stages, we'll start with a concrete code example and iterate on it over the next few sections.
+
+In practice, _lots_ of work goes into the data and model selection step. For now, we'll assume that groundwork has already been done and we've settled on the following code snippit to start with.
 
 ```python
 import numpy as np
@@ -56,14 +60,14 @@ This code above is a great start but needs a few improvements before it's ready 
 
 ### Installing pywaggle
 
-The first step in instrumenting an edge app for Waggle is to get [pywaggle](https://github.com/waggle-sensor/pywaggle). pywaggle is our Python SDK which provides edge apps access to devices (ex. cameras and microphones) and messaging within a node.
+The first step in preparing an edge app for Waggle is to install [pywaggle](https://github.com/waggle-sensor/pywaggle). pywaggle is our Python SDK which provides edge apps access to devices (ex. cameras and microphones) and messaging within a node.
 
 ![Accessing Devices](../images/access_to_sensors.svg)
 
 For this tutorial, we will install the latest version of pywaggle with all optional dependencies using:
 
 ```sh
-pip3 install --upgrade 'pywaggle[all]'
+pip3 install 'pywaggle[all]'
 ```
 
 ### Accessing a camera
@@ -108,7 +112,7 @@ You should see output like:
 [51.43575738 51.83611871 54.64226671]
 ```
 
-You're exact numbers may differ as this is computed using _your_ default camera.
+_You're exact numbers may differ as this is computed using your default camera._
 
 ### Publishing results
 
@@ -150,7 +154,7 @@ Now, we'll run this using:
 python3 main.py
 ```
 
-You may notice something strange... there's no output! Usually, published data is sent to a beehive where it can be viewed later. However, because we're developing locally and not configured to publish to a beehive, the data isn't going anywhere. In the next section, we'll see how we can tap into our published data.
+You may notice something... there's no output! Usually, published data is sent to a beehive where it can be viewed later. However, because we're developing locally and have not configured a beehive, the data isn't going anywhere. In the next section, we'll see how we can tap into our published data.
 
 ### Viewing run logs
 
