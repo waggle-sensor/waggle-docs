@@ -41,7 +41,6 @@ The entry-point into learning about your interaction with Waggle can be best dir
 - Want to learn about the sensors that Waggle already supports?
 - Do you have a new sensor that you want to write an edge application for?
 
-
 [How do I run edge apps?](../tutorials/edge-apps/intro-to-edge-apps)
 - Want to know how to create an edge app?
 - Want to know how your edge app can get access to edge sensor data?

@@ -8,9 +8,7 @@ In [part 1](intro-to-edge-apps), we showed an overview of what edge apps are and
 
 ## Prerequisites
 
-We'll assume the reader has some development experience in Python and tools like git for version control.
-
-If this describes you well, please proceed to the next section. Otherwise, feel free to follow along but we will primarily focus on explaining edge app specific details.
+We'll assume that your local development environment is a laptop or device with a camera or webcam attached. The reader should have some basic development experience in [Python](https://www.python.org) and with [git](https://git-scm.com) for version control.
 
 ## Development workflow
 
@@ -20,11 +18,11 @@ In the next few parts of this tutorial, we'll deep dive into the following app d
 
 First, **data and model selection** is where you scope the problem and identify a new or existing model for your application. This typically happens _outside_ of our ecosystem.
 
-Second, **develop and test** is where you begin to integrate your initial code with our ecosystem, test and finally build your application in ECR.
+Second, **develop and test** is where you begin to integrate your initial code with our ecosystem, test and finally build your application in [ECR](/docs/about/architecture#edge-code-repository-ecr).
 
 Finally, **deploy and iterate** is where you schedule your application for deployment and look at the results.
 
-## Preparing an example for edge
+## Preparing an example for the edge
 
 In order to illustrate progress through each of these stages, we'll start with a concrete code example and iterate on it over the next few sections.
 
@@ -60,11 +58,13 @@ This code above is a great start but needs a few improvements before it's ready 
 
 ### Installing pywaggle
 
-The first step in preparing an edge app for Waggle is to install [pywaggle](https://github.com/waggle-sensor/pywaggle). pywaggle is our Python SDK which provides edge apps access to devices (ex. cameras and microphones) and messaging within a node.
+The first step in preparing our example for the edge is to install [pywaggle](https://github.com/waggle-sensor/pywaggle) in your local development environment.
+
+pywaggle is our Python SDK which provides edge apps access to devices (ex. cameras and microphones) and messaging within a node.
 
 ![Accessing Devices](../images/access_to_sensors.svg)
 
-For this tutorial, we will install the latest version of pywaggle with all optional dependencies using:
+For this tutorial, we'll install the latest version of pywaggle with all optional dependencies in our local development environment using:
 
 ```sh
 pip3 install 'pywaggle[all]'
@@ -116,7 +116,7 @@ _You're exact numbers may differ as this is computed using your default camera._
 
 ### Publishing results
 
-The next change we'll make is to publish our data instead of just print it. This will allow it to be sent to a beehive when it's scheduled on a node.
+The next change we'll make is to publish our data to the [Beehive Data Repository](/docs/about/architecture#data-repository-dr) instead of just print it. This will allow it to be sent to a Beehive once it's scheduled on a node.
 
 ```python
 import numpy as np
@@ -186,7 +186,7 @@ If we run `python3 main.py` again, then we'll see new data appended to that file
 
 This provides a convenient way to understand the behavior of an app, particularly one with a more complicated flow.
 
-### Uploading a sample
+### Uploading a snapshot
 
 Finally, the last change we'll make is to upload our snapshots after publishing the mean color.
 
