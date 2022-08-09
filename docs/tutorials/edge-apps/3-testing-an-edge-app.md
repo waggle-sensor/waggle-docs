@@ -26,11 +26,11 @@ This will provide you a new repo with the following files:
 * [requirements.txt](https://github.com/waggle-sensor/edge-app-template/blob/main/requirements.txt): Python dependencies.
 * [Dockerfile](https://github.com/waggle-sensor/edge-app-template/blob/main/Dockerfile): Build instructions.
 
-If you made any changes to your `main.py` from part 2, feel free to commit and push any of your own changes, otherwise we will use the example from the template for the remainer of the tutorial.
+If you made any changes to your `main.py` from part 2, feel free to commit and push any of your own changes, otherwise we will use the example from the template for the rest of the tutorial.
 
 ## Building our app
 
-Now that we have access to a node, go ahead and clone your repo to `app-tutorial` and cd into it:
+Now that we've setup node access, ssh to the node then clone and cd into your `app-tutorial` repo:
 
 ```sh
 git clone https://github.com/username/app-tutorial
@@ -111,6 +111,8 @@ to:
         with Camera("left") as camera:
 ```
 
+_The specific camera name will depend on your specific node. If you are having problems accessing a camera, please [contact us](mailto:support@sagecontinuum.org) for more details._
+
 Let's rebuild and run the code with the change. We can do this in a more streamlined way by combining the build and run steps as follows:
 
 ```sh
@@ -129,7 +131,7 @@ Now that we know this works, please commit and push the change to the repo from 
 
 ## Viewing our output
 
-We'll close this part, by looking at the data we just published. To do this, we'll make the following request against our data API:
+We'll close this part, by looking at the data we just published. To do this, we'll query the [Beehive Data Repository](/docs/about/architecture#data-repository-dr):
 
 ```sh
 curl -s 'Content-Type: application/json' https://data.sagecontinuum.org/api/v1/query -d '
