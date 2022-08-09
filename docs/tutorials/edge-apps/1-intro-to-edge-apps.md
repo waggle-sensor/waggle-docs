@@ -4,10 +4,6 @@ sidebar_position: 1
 
 # Part 1: Intro to edge apps
 
-:::info
-Aug 8, 2022: The edge apps portion of the docs is undergoing a major rewrite. Please check back frequently as we are heavily expanding each part.
-:::
-
 ## What are edge apps?
 
 Edge apps are programs which read data (ex. sensors, audio, video), process it and then publish information derived from that data.
