@@ -113,12 +113,6 @@ to:
 
 _The specific camera name will depend on your specific node. If you are having problems accessing a camera, please [contact us](mailto:support@sagecontinuum.org) for more details._
 
-Let's rebuild and run the code with the change. We can do this in a more streamlined way by combining the build and run steps as follows:
-
-```sh
-sudo pluginctl run --name app-tutorial $(sudo pluginctl build .)
-```
-
 This time you should see the plugin run and exit cleanly:
 
 ```txt
