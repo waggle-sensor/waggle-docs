@@ -6,26 +6,47 @@ sidebar_position: 4
 
 Now that we've finished [preparing our code](creating-an-edge-app) and [testing it](testing-an-edge-app), we're ready to publish it to the [Edge Code Repository](https://portal.sagecontinuum.org)!
 
-TODO! We will expand on this soon!
+## Preparing our app
 
-<!--
+Before publishing an app to the [Edge Code Repository](/docs/about/architecture#edge-code-repository-ecr), we need to add a few packaging items to it.
 
-The following steps are required to submit a plugin to ECR.
+First, add the following `sage.yaml` file to your repo and fill in your own app details:
 
-1. Create a repo for plugin and add required packaging files. (See [pywaggle guide](https://github.com/waggle-sensor/pywaggle/blob/main/docs/writing-a-plugin.md#adding-hello-world-plugin-packaging-info) for details.)
-2. Go to [Edge Code Repository](https://portal.sagecontinuum.org).
-3. Go to "Sign In" and follow the instructions.
-4. Go to "My Apps".
-5. Go to "Create app" and follow the instructions.
+```yaml
+name: ""
+description: ""
+keywords: ""
+authors: "Your Name <your.email@somewhere.org>"
+collaborators: ""
+funding: ""
+license: ""
+homepage: "https://github.com/waggle-sensor/edge-app-template"
+source:
+  architectures:
+    - "linux/amd64"
+    - "linux/arm64"
+```
+
+Next, create an `ecr-meta` directory in your repo and populate it with the following text and media:
+
+* `ecr-science-description.md` - Markdown with in depth description of the science being done here (1 page of text).
+* `ecr-icon.jpg` - An icon for the project/work 512x512px.
+* `ecr-science-image.jpg` - A science image for the project with a minimum size of 1920x1080px.
+
+Once we've commited and pushed those files to your repo, we're ready to publish our app!
+
+## Publishing our app
+
+Please visit the [Edge Code Repository](https://portal.sagecontinuum.org) and complete the following steps:
+
+1. Go to "Sign In" and follow the instructions.
+2. Go to "My Apps".
+3. Go to "Create app" and follow the instructions.
 
 If everything is successful, your plugin will appeared and be marked as "Built".
 
-<!--
-## Schedule plugin for deployment
+## Conclusion
 
-_TODO This is work in progress! We will update this section once the scheduler is public._
+Congratulation! You've successfully written, tested and published an app to ECR!
 
-## Access plugin data
-
-Once a plugin has been deployed to node(s) and is publishing data, you can [access the published data](../accessing-data) in the Data Repository.
--->
+We encourage you to check out other apps in the [ECR](https://portal.sagecontinuum.org) and explore additional functionality provided by [pywaggle](https://github.com/waggle-sensor/pywaggle).
