@@ -24,7 +24,8 @@ This will provide you a new repo with the following files:
 
 * [main.py](https://github.com/waggle-sensor/edge-app-template/blob/main/main.py): Main code.
 * [requirements.txt](https://github.com/waggle-sensor/edge-app-template/blob/main/requirements.txt): Python dependencies.
-* [Dockerfile](https://github.com/waggle-sensor/edge-app-template/blob/main/Dockerfile): Build instructions.
+* [Dockerfile](https://github.com/waggle-sensor/edge-app-template/blob/main/Dockerfile): App build instructions.
+* [sage.yaml](https://github.com/waggle-sensor/edge-app-template/blob/main/sage.yaml): App metadata template.
 
 If you made any changes to your `main.py` from part 2, feel free to commit and push any of your own changes, otherwise we will use the example from the template for the rest of the tutorial.
 
