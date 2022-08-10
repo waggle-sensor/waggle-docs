@@ -10,7 +10,7 @@ Now, we're ready to start testing it on a development node and describing our bu
 
 ## Accessing development nodes
 
-The first thing we need to do is get access to a development node. Unfortunately we are still developing the infrastructure for to open this to general users.
+The first thing we need to do is get access to a development node. Unfortunately, we are still developing the infrastructure to open this up to general users.
 
 For now, please [contact us](mailto:support@sagecontinuum.org) to request access to a development node and we'll work with you to setup access.
 
