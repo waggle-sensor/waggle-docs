@@ -12,7 +12,7 @@ Now, we're ready to start testing it on a development node and describing our bu
 
 The first thing we need to do is get access to a development node. Unfortunately, we are still developing the infrastructure to open this up to general users.
 
-For now, please [contact us](mailto:support@sagecontinuum.org) to request access to a development node and we'll work with you to setup access.
+For now, please [contact us](/docs/contact-us) to request access to a development node and we'll work with you to setup access.
 
 ## Organizing our app
 
@@ -112,7 +112,7 @@ to:
         with Camera("left") as camera:
 ```
 
-_The specific camera name will depend on your specific node. If you are having problems accessing a camera, please [contact us](mailto:support@sagecontinuum.org) for more details._
+_The specific camera name will depend on your specific node. If you are having problems accessing a camera, please [contact us](/docs/contact-us) for more details._
 
 This time you should see the plugin run and exit cleanly:
 

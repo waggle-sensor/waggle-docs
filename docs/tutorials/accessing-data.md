@@ -23,7 +23,7 @@ Data can be accessed via "data bundles"  or the query API.
 
 ## Restricted access files
 
-While almost all Waggle data is open, some types of data requires a written Data Use Agreement for access.  This includes raw image and audio data taken from certain locations. Please [contact us](mailto:support@sagecontinuum.org) if you are interested in access. The sensor log (see Query API) contains references to both restricted and unrestricted files. Downloading restricted files without authorization will return a `401 Unauthorized`.
+While almost all Waggle data is open, some types of data requires a written Data Use Agreement for access.  This includes raw image and audio data taken from certain locations. Please [contact us](/docs/contact-us) if you are interested in access. The sensor log (see Query API) contains references to both restricted and unrestricted files. Downloading restricted files without authorization will return a `401 Unauthorized`.
 
 ## Data Bundles
 
