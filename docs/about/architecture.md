@@ -117,7 +117,7 @@ Waggle nodes enable @ the edge fast computation, leveraging the large non-volati
 
 Overall, even though the nodes may use different CPU architectures and different sensor configurations, they all leverage the same [Waggle Edge Stack (WES)](#waggle-edge-stack-wes) to run [plugins](#what-is-a-plugin).
 
-> Details & source code: https://github.com/waggle-sensor/wild-waggle-node
+> Details & source code: https://github.com/waggle-sensor/node-platforms
 
 ### Wild Waggle Node
 
