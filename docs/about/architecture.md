@@ -166,7 +166,7 @@ The Waggle Edge Stack is the set of core services running within the [Waggle nod
 The above diagram demonstrates 2 [plugins](#what-is-a-plugin) running on a Waggle node.  Plugin 1 ("neon-kafka") is an example [plugin](#what-is-a-plugin) that is running alongside Plugin 2 ("data-smooth"). In this example, "neon-kafka" (via the WES tools) is reading metrics from the node's sensors and then publishing that data within the WES run-time environment (internal to the node). 
 At the same time, the "data-smooth" [plugin](#what-is-a-plugin) is subscribing to this data stream, performing some sort of inference and then publishing the inference results (via WES tools) to Beehive.
 
-> _Note_: see [Developing new edge applications](https://docs.waggle-edge.ai/docs/tutorials/compute-at-edge#developing-new-edge-applications) for a guide on how to create a Waggle [plugin](#what-is-a-plugin).
+> _Note_: see the [Edge apps](https://docs.waggle-edge.ai/docs/category/edge-apps) guide on how to create a Waggle [plugin](#what-is-a-plugin).
 
 > Details & source code: https://github.com/waggle-sensor/waggle-edge-stack
 
@@ -174,10 +174,8 @@ At the same time, the "data-smooth" [plugin](#what-is-a-plugin) is subscribing t
 
 Plugins are the user developed module that the Waggle cyberinfrastructure is designed around. At it's simplest definition a "plugin" is code that runs @ the edge to perform some task. That task may be simply collecting sample camera images or a complex inference combining sensor data and results published from other plugins. A plugin's code will interface with the edge node's sensor(s) and then publish resulting data via the tools provided by [WES](#waggle-edge-stack-wes). All developed plugins are hosted by the Beehive [Edge Code Repository](#edge-code-repository-ecr).
 
-> See [how to create plugins](https://docs.waggle-edge.ai/docs/tutorials/compute-at-edge) for details.
+> See [how to create plugins](https://docs.waggle-edge.ai/docs/category/edge-apps) for details.
 
 ### Science Goals
 
 A "science goal" is a rule-set for how and when [plugins](#what-is-a-plugin) are run on edge nodes. These "science goals" are created by scientist to accomplish a science objective through the execution of [plugins](#what-is-a-plugin) in a specific manner. Goals are created, in a human language, and managed within the Beehive [Edge Scheduler](#edge-scheduler-es). It is then the cyberinfrastucture responsibility to deploy the "science goals" to the edge nodes and execute the goal's [plugins](#what-is-a-plugins).
-
-> See [how to schedule a plugin for deployment](https://docs.waggle-edge.ai/docs/tutorials/compute-at-edge#schedule-plugin-for-deployment) for details.
