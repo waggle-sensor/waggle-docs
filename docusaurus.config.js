@@ -77,11 +77,11 @@ module.exports = {
     disableSwitch: true,
     algolia: {
       apiKey: 'BH4D9OD16A',
-      indexName: 'sage',
+      indexName: 'waggle-edge',
       contextualSearch: false, // mostly for versioned docs
-      appId: 'XYV3A23P29',
+      appId: 'MPDJQF6T11',
       searchParameters: {},    // Optional: Algolia search parameters
-      apiKey: '8dd26cf6515c47eade5695acecd06671',
+      apiKey: '02a5ef7ab6307c2a0a4d8c76036af3cf',
     },
     colorMode: {
       disableSwitch: true
