@@ -73,7 +73,6 @@ module.exports = {
       theme: lightCodeTheme,
       darkTheme: darkCodeTheme,
     },
-    hideableSidebar: true,
     disableSwitch: true,
     algolia: {
       apiKey: 'BH4D9OD16A',
@@ -85,6 +84,11 @@ module.exports = {
     },
     colorMode: {
       disableSwitch: true
+    },
+    docs: {
+      sidebar: {
+        hideable: true,
+      }
     }
   },
   presets: [

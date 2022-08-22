@@ -18,13 +18,13 @@ Clone this repo.
 
 Install deps:
 ```console
-yarn install
+npm install
 ```
 
 Start the local dev environment:
 
 ```console
-yarn start
+npm start
 ```
 
 ## Build
@@ -32,12 +32,12 @@ yarn start
 Generate static content into the `build` directory:
 
 ```console
-yarn build
+npm run build
 ```
 
 ## GitHub Pages Deploy
 
-GIT_USER=<GITHUB_USERNAME> yarn deploy
+GIT_USER=<GITHUB_USERNAME> npm run deploy
 
 
 
