@@ -248,7 +248,7 @@ You should also see a corresponding item in the `data.ndjson` file.
 
 ## Tools for analyzing run logs (Optional)
 
-If you find yourself using the run logs frequently, we recommend using the [Sage data client](https://pypi.org/project/sage-data-client/) which provides convenient functionality for loading and doing analysis on the `data.ndjson` file. See the ["Load results from file" example](https://github.com/sagecontinuum/sage-data-client#load-results-from-file) for more info.
+If you find yourself working with run logs frequently, we recommend the [Sage data client](https://pypi.org/project/sage-data-client/) which provides convenient functionality for loading and doing analysis on the `data.ndjson` file. See the ["Load results from file" example](https://github.com/sagecontinuum/sage-data-client#load-results-from-file) for more info.
 
 ## Next steps
 
