@@ -186,8 +186,6 @@ If we run `python3 main.py` again, then we'll see new data appended to that file
 
 This provides a convenient way to understand the behavior of an app, particularly one with a more complicated flow.
 
-Finally, though it's completely optional, we recommend the [Sage data client](https://pypi.org/project/sage-data-client/) which provides convenient functionality for loading and doing analysis on the `data.ndjson` file. See the ["Load results from file" example](https://github.com/sagecontinuum/sage-data-client#load-results-from-file) for more info.
-
 ### Uploading a snapshot
 
 Finally, the last change we'll make is to upload our snapshots after publishing the mean color.
@@ -247,6 +245,10 @@ You should also see a corresponding item in the `data.ndjson` file.
 {"meta":{},"name":"color.mean.b","timestamp":"2022-08-23T13:39:34.985679000","value":8.217218967013888}
 {"meta":{"filename":"snapshot.jpg"},"name":"upload","timestamp":"2022-08-23T13:39:34.985679000","value":"/Users/sean/dev/pw-example/test-run/uploads/1661279974985679000-snapshot.jpg"}
 ```
+
+## Tools for analyzing run logs (Optional)
+
+If you find yourself using the run logs frequently, we recommend using the [Sage data client](https://pypi.org/project/sage-data-client/) which provides convenient functionality for loading and doing analysis on the `data.ndjson` file. See the ["Load results from file" example](https://github.com/sagecontinuum/sage-data-client#load-results-from-file) for more info.
 
 ## Next steps
 
