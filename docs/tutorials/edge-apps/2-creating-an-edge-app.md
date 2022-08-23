@@ -67,7 +67,7 @@ pywaggle is our Python SDK which provides edge apps access to devices (ex. camer
 For this tutorial, we'll install the latest version of pywaggle with all optional dependencies in our local development environment using:
 
 ```sh
-pip3 install 'pywaggle[all]'
+pip3 install --upgrade 'pywaggle[all]'
 ```
 
 ### Accessing a camera
@@ -168,23 +168,25 @@ python3 main.py
 This will create a new directory named `test-run` and will contain a file named `data.ndjson` which contains something like:
 
 ```json
-{"name":"color.mean.r","ts":1659649285404613000,"meta":{},"val":41.216171875}
-{"name":"color.mean.g","ts":1659649285404613000,"meta":{},"val":40.8623828125}
-{"name":"color.mean.b","ts":1659649285404613000,"meta":{},"val":42.65227322048611}
+{"meta":{},"name":"color.mean.r","timestamp":"2022-08-23T13:38:04.619466000","value":32.67932074652778}
+{"meta":{},"name":"color.mean.g","timestamp":"2022-08-23T13:38:04.619466000","value":19.087491319444446}
+{"meta":{},"name":"color.mean.b","timestamp":"2022-08-23T13:38:04.619466000","value":10.337491319444444}
 ```
 
 If we run `python3 main.py` again, then we'll see new data appended to that file:
 
 ```json
-{"name":"color.mean.r","ts":1659649285404613000,"meta":{},"val":41.216171875}
-{"name":"color.mean.g","ts":1659649285404613000,"meta":{},"val":40.8623828125}
-{"name":"color.mean.b","ts":1659649285404613000,"meta":{},"val":42.65227322048611}
-{"name":"color.mean.r","ts":1659649380989242000,"meta":{},"val":42.72360460069444}
-{"name":"color.mean.g","ts":1659649380989242000,"meta":{},"val":42.572535807291665}
-{"name":"color.mean.b","ts":1659649380989242000,"meta":{},"val":44.36891818576389}
+{"meta":{},"name":"color.mean.r","timestamp":"2022-08-23T13:38:04.619466000","value":32.67932074652778}
+{"meta":{},"name":"color.mean.g","timestamp":"2022-08-23T13:38:04.619466000","value":19.087491319444446}
+{"meta":{},"name":"color.mean.b","timestamp":"2022-08-23T13:38:04.619466000","value":10.337491319444444}
+{"meta":{},"name":"color.mean.r","timestamp":"2022-08-23T13:38:19.719910000","value":30.90709743923611}
+{"meta":{},"name":"color.mean.g","timestamp":"2022-08-23T13:38:19.719910000","value":16.61302517361111}
+{"meta":{},"name":"color.mean.b","timestamp":"2022-08-23T13:38:19.719910000","value":8.565154079861111}
 ```
 
 This provides a convenient way to understand the behavior of an app, particularly one with a more complicated flow.
+
+Finally, though it's completely optional, we recommend the [Sage data client](https://pypi.org/project/sage-data-client/) which provides convenient functionality for loading and doing analysis on the `data.ndjson` file. See the ["Load results from file" example](https://github.com/sagecontinuum/sage-data-client#load-results-from-file) for more info.
 
 ### Uploading a snapshot
 
@@ -240,10 +242,10 @@ Uploads are added to the run log directory using the format `nstimestamp-filenam
 You should also see a corresponding item in the `data.ndjson` file.
 
 ```json
-{"name":"color.mean.r","ts":1659650274683007000,"meta":{},"val":46.39777994791667}
-{"name":"color.mean.g","ts":1659650274683007000,"meta":{},"val":46.66985785590278}
-{"name":"color.mean.b","ts":1659650274683007000,"meta":{},"val":48.90661024305555}
-{"name":"upload","ts":1659650274683007000,"meta":{"filename":"snapshot.jpg"},"val":"/Users/sean/git/instrument-with-pywaggle-example/run-log/uploads/1659650274683007000-snapshot.jpg"}
+{"meta":{},"name":"color.mean.r","timestamp":"2022-08-23T13:39:34.985679000","value":29.601871744791666}
+{"meta":{},"name":"color.mean.g","timestamp":"2022-08-23T13:39:34.985679000","value":16.004838324652777}
+{"meta":{},"name":"color.mean.b","timestamp":"2022-08-23T13:39:34.985679000","value":8.217218967013888}
+{"meta":{"filename":"snapshot.jpg"},"name":"upload","timestamp":"2022-08-23T13:39:34.985679000","value":"/Users/sean/dev/pw-example/test-run/uploads/1661279974985679000-snapshot.jpg"}
 ```
 
 ## Next steps
