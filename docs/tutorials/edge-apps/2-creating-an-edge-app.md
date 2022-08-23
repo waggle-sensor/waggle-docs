@@ -246,7 +246,7 @@ You should also see a corresponding item in the `data.ndjson` file.
 {"meta":{"filename":"snapshot.jpg"},"name":"upload","timestamp":"2022-08-23T13:39:34.985679000","value":"/Users/sean/dev/pw-example/test-run/uploads/1661279974985679000-snapshot.jpg"}
 ```
 
-## Tools for analyzing run logs (Optional)
+### Tools for analyzing run logs (Optional)
 
 If you find yourself working with run logs frequently, we recommend the [Sage data client](https://pypi.org/project/sage-data-client/) which provides convenient functionality for loading and doing analysis on the `data.ndjson` file. See the ["Load results from file" example](https://github.com/sagecontinuum/sage-data-client#load-results-from-file) for more info.
 
