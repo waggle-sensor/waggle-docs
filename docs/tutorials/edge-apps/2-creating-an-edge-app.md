@@ -72,7 +72,7 @@ pip3 install --upgrade 'pywaggle[all]'
 
 ### Accessing a camera
 
-Now that we have pywaggle, the first change we'll make is to use a camera as input rather than a static image file.
+Now that we have pywaggle, the first change we'll make is to use a camera as input rather than a static image file. We'll use the following `shapshot()` function to take an RGB snapshot from the camera.
 
 ```python
 import numpy as np
