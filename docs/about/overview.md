@@ -56,6 +56,10 @@ The entry-point into learning about your interaction with Waggle can be best dir
 - Want to know how to trigger an HPC event?
 - Want to get a text message when your edge application does something cool?
 
+[How do I build my own Waggle device?](../tutorials/create-waggle.md)
+- add some "questions" here?
+- Do you want have a classroom of students that want to get started with AI? (.. something lke this..)
+
 ## How is the Waggle cyber-infrastructure architected?
 
 If you are interested in learning more about how the Waggle Cyber-infrastructure works you can head on over to the [Waggle Architecture Overview](./architecture.md) page.
