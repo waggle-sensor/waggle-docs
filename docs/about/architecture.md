@@ -124,12 +124,12 @@ The Wild Waggle Node is a custom built weather-proof enclosure intended for remo
 ![Figure 6: Wild Waggle Node Overview](./images/node_wild_01.svg)
 
 The technical capabilities of the Wild Waggle Node consists of:
-- NVidia Xavier NX ARM64 [Node Controller](https://github.com/waggle-sensor/nodecontroller-arm64) w/ 8GB of shared CPU/GPU RAM
+- NVidia Xavier NX ARM64 [Node Controller](https://github.com/waggle-sensor/nodecontroller) w/ 8GB of shared CPU/GPU RAM
 - 1 TB of NVMe storage
 - 4x PoE expansion ports
 - 1x USB2 expansion port
 - optional [Stevenson Shield](https://en.wikipedia.org/wiki/Stevenson_screen) housing a RPi 4 w/ environmental sensors & microphone
-- optional 2nd NVidia Xavier NX ARM64 Edge Processor
+- optional 2nd NVidia Xavier NX ARM64 [Edge Processor](https://github.com/waggle-sensor/edgeprocessor)
 
 > Manual: https://docs.waggle-edge.ai/docs/about/resources/wsn-manual
 
@@ -142,7 +142,7 @@ The Waggle Blade Node is a standard commercially available server intended for u
 ![Figure 7: Waggle Blade Node Overview](./images/node_blade_01.svg)
 
 The above diagram shows the basic technical configuration of a Waggle Blade Node:
-- Multi-core ARM64 Node Controller
+- Multi-core ARM64
 - 32GB of RAM
 - Dedicated NVida T4 GPU
 - 1 TB of SSD storage
