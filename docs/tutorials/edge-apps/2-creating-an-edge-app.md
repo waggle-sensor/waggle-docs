@@ -8,7 +8,7 @@ In [part 1](intro-to-edge-apps), we showed an overview of what edge apps are and
 
 ## Prerequisites
 
-We'll assume that your local development environment is a laptop or device with a camera or webcam attached. The reader should have some basic development experience in [Python](https://www.python.org) and with [git](https://git-scm.com) for version control.
+For this part of the tutorial, we'll assume you are developing directly on a laptop or machine with a camera or webcam available. You should have some basic development experience in [Python](https://www.python.org) and with [git](https://git-scm.com) for version control.
 
 ## Development workflow
 
@@ -72,7 +72,7 @@ pip3 install --upgrade 'pywaggle[all]'
 
 ### Accessing a camera
 
-Now that we have pywaggle, the first change we'll make is to use a camera as input rather than a static image file.
+Now that we have pywaggle, the first change we'll make is to use a camera as input rather than a static image file. We'll use the following `shapshot()` function to take an RGB snapshot from the camera.
 
 ```python
 import numpy as np

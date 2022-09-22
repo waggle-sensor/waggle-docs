@@ -114,7 +114,7 @@ to:
 
 _The specific camera name will depend on your specific node. If you are having problems accessing a camera, please [contact us](/docs/contact-us) for more details._
 
-This time you should see the plugin run and exit cleanly:
+After rebuilding and running this again, the plugin should run and exit cleanly:
 
 ```txt
 Launched the plugin app-tutorial-1659971085 successfully 
@@ -123,6 +123,12 @@ INFO: 2022/08/08 15:04:45 run.go:63: Plugin is in "Pending" state. Waiting...
 ```
 
 Now that we know this works, please commit and push the change to the repo from your machine.
+
+Finally, if you are rebuilding and running code frequently, you can combine the build and run into a single step as follows:
+
+```sh
+sudo pluginctl run --name app-tutorial $(sudo pluginctl build .)
+```
 
 ## Viewing our output
 
