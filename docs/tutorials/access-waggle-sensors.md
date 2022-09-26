@@ -89,6 +89,6 @@ PyWaggle often provides edge applications direct access to physical sensors. For
 It is often important to sample images from cameras in the field to create initial dataset for a machine learning algorithm. [The example](https://github.com/waggle-sensor/pywaggle/blob/main/docs/writing-a-plugin.md#accessing-a-video-stream) describes how to access to a video stream from a camera sensor using PyWaggle.
 
 ## Bring your own sensor to Waggle
-Users may need to develop their own device plugin to expose the sensor to the system, or to publish measurement data from the sensor to the cloud. Unlike an edge application or software-defined sensors, device plugins communicating with a physical sensor may need special access, e.g. serial port, in order to talk to the sensor attached to Waggle node. Such device plugin may need to be verified by the Waggle team.
+Users may need to develop their own device plugin to expose the sensor to the system, or to publish measurement data from the sensor to the cloud. Unlike an edge application or software-defined sensors, device plugins communicating with a physical sensor may need special access, e.g. serial port, in order to talk to the sensor attached to Waggle node. Such device plugin may need to be verified by the Waggle team. Visit the [Building your own Waggle device](./create-waggle.md) page for the guide to set up your Waggle device.
 
 To integrate your sensor device into Waggle, head over to the [Contact Us](../contact-us.md) page
