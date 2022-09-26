@@ -57,8 +57,9 @@ The entry-point into learning about your interaction with Waggle can be best dir
 - Want to get a text message when your edge application does something cool?
 
 [How do I build my own Waggle device?](../tutorials/create-waggle.md)
-- Want to set up your own device to build up an edge app on it?
-- Want to teach AI to a classroom of students with an instruction manual?
+
+- Want to set up your own device for local edge app development?
+- Want to teach AI to a classroom of students?
 
 ## How is the Waggle cyber-infrastructure architected?
 

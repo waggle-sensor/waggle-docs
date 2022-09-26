@@ -1,37 +1,28 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 ---
 
-# Building your own Waggle Device
+# Building your own Waggle device
 
-:::
-Note: This tutorial is work in progress and is made available here for early preview.
-:::
+Are you a professor that wants to use inexpensive Waggle devices to teach students interested in AI? Are you someone interested in developing a new [edge app](./edge-apps/1-intro-to-edge-apps.md) using a local development platform? Are you a Waggle user interested in using a new sensor (i.e. a new camera, a bat signal detector, a custom sensor they built)? If you would like to build, design and deploy software that could answer your questions above, then Waggle is the right choice for you.
 
-Do you ever look into the sky and wonder how will the cloud move over time? Do you ever want to know if a wildfire is possibly to start in a forest? If you would like to build, design and deploy a software that could answer your questions above, then Waggle is the right choice for you. Waggle is an edge computing wireless sensor device, say, you can define what the device will be detecting by building a software on it.
+This tutorial will guide you in preparing your own Waggle device and (optionally) registering it to upload data to a shared [development Beehive](../about/architecture.md#beehive). This Waggle device is a fully unlocked development platform running the same [WES infrastructure](../about/architecture.md#waggle-edge-stack-wes) that runs in production Waggle edge devices (ex. the [Wild Waggle Node](../about/architecture.md#wild-waggle-node)). This is an ideal platform for user's interested in developing a new [edge app](./edge-apps/1-intro-to-edge-apps.md) and/or experimenting with a [new sensor](./access-waggle-sensors.md#bring-your-own-sensor-to-waggle).
 
-If you would like to gain more understandings and share your own observation, this tutorial will give you a guide of how to register your Waggle device to the Sage network. After registering, you can publish your observation and see others data on [Sage Portal](https://portal.sagecontinuum.org/apps/explore).
+## Getting Started
+
+To get started in boot-strapping your Waggle Edge Computing kit you can follow the instructions for the various supported platforms on the [node-platforms](https://github.com/waggle-sensor/node-platforms) GitHub page.
+
+> The currently only supported platform is the [NVidia nano](https://github.com/waggle-sensor/node-platforms/tree/main/nvidia-nano) but more platforms will be added in the future. In fact, if you would like to add support for other platforms go ahead and submit a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) to [node-platforms](https://github.com/waggle-sensor/node-platforms).
+
+### Registering your Waggle device
+
+During the bootstrapping process you will have the option to register your device within the [web portal](https://portal.sagecontinuum.org/apps/explore). It is highly recommended to register your device, as this enables all the core [WES tools](LINK HERE) to be automatically downloaded, enabling the edge app development and run-time environment. Additionally, this enables your edge apps to publish data to the development [Beehive](LINK HERE), accessible to cloud-based analysis tools and workflow frameworks.
+
+To register your device navigate to the [My Devices Web Portal](https://portal.sagecontinuum.org/my-devices). Enter your device ID on "My Waggle Devices" page then click "Get Keys" button. A "registration zip" file will be generated and available for download. Then follow the instructions for [your device](https://github.com/waggle-sensor/node-platforms) to load the registration keys.
+
+> You may register as many times as you want. But note that each registration key has a short expiration time and should be used shortly after generation.
+
+Now you are ready to develop your edge apps and/or introduce new sensors to the Waggle platform. Head over to the [overview](../about/overview.md) to find the instructions you need for development.
 
 
-## Potential Use Cases
-
-You might be ...
-- a professor that wants to introduce Waggle device to your students and plans to instruct students to make 20+ waggle devices
-- someone interested in Waggle and making an app but doesnt have access to production nodes
-- a new user of waggle network that wants to use a new sensor (i.e. a new camera, a new bat singal detector, a new custom sensor they built)
-
-If you have your device ready, you could follow the instructions in [Access Waggle sensors](./access-waggle-sensors.md) to start defining the edge computing software on the device. If you don't, you could use a Sage Edge Computing kit to easy set up a hardware platform for development.
-
-An inexpensive Sage Edge Computing kit that can enable students to run existing AI@Edge computations with cameras and microphones, and then develop their own codes. The Sage Beehive will host the data and make it available to cloud-based analysis tools and workflow frameworks. This document describes the overall concept, some initial goals, and workflow.
-
-## Support Platforms
-
-The only supported platform now is Nvidia Nano, please refer to the [link](https://github.com/waggle-sensor/node-platforms/tree/main/nvidia-nano) to see the guide of setting up Nvidia Nano.
-
-In the future, we will support more [platforms](https://github.com/waggle-sensor/node-platforms) such as Raspberry Pi 4, Wild Waggle Node, etc. You can also design your own device and follow the steps below to register to the platform.
-
-## Register Your Own Device
-
-In order to register your waggle device, you will need keys to authenticate your device with beehive when setting up your nano device. To get registration keys, please log in to [Sage Portal](https://portal.sagecontinuum.org/apps/explore) with your Globus credentials, after logging in, visit [My devices](https://portal.sagecontinuum.org/my-devices) page under your user account. Enter your device ID on "My Waggle Devices" page then click "Get Keys" button. It will generate a zip file for you. Check your downloads folder for the zip file, then move it to the same folder with the ansible script to proceed the execution.
-
-![Figure 1: Sage Portal - My devices](./images/sage-my-devices.png)
+![Figure 1: Registering my devices](./images/sage-my-devices.png)
