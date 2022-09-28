@@ -16,7 +16,7 @@ Partners will deploy Waggle testbeds in Australia, Japan, UK, and Taiwan, provid
 
 Waggle will develop open source computer code and provide open hardware design documents.  The data from sensors will also be hosted in the cloud to facilitate easy data analysis.
 
-Supporting documentation for the software and hardware that define the Waggle AI@Edge platform can be found on the [Waggle GitHub site](https://github.com/waggle-sensor/waggle).
+Supporting documentation for the software and hardware that define the Waggle AI@Edge platform can be found on the [Waggle GitHub site](https://github.com/waggle-sensor).
 
 ## Who are the users of Waggle?
 
