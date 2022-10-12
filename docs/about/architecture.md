@@ -84,7 +84,7 @@ In the above example, the value of `25050` was collected @ `2022-06-10T22:37:47.
 
 ### Edge Scheduler (ES)
 
-The Edge Scheduler is defined as the suite of services running in Beehive that facilitate running [plugins](#what-is-a-plugin) @ the edge. Included here are user interfaces and APIs for scientists to create and manage their [“science goals”](#science-goals). The Edge Scheduler continously analyzes node workloads against all the [“science goals”](#science-goals) to determine how the [“science goals”](#science-goals) are deployed to the Beehive nodes. When it is determined that a node's [“science goals”](#science-goals) are to be updated, the Edge Scheduler interfaces with [WES](#waggle-edge-stack-wes) running on those nodes to update the node's local copy of hte [“science goals”](#science-goals). Essentially, the Edge Scheduler is the overseer of all the Beehive's nodes, deploying [“science goals”](#science-goals) to them to meet the scientists [plugin](#what-is-a-plugin) execution objectives.
+The Edge Scheduler is defined as the suite of services running in Beehive that facilitate running [plugins](#what-is-a-plugin) @ the edge. Included here are user interfaces and APIs for scientists to create and manage their [“science goals”](#science-goals). The Edge Scheduler continously analyzes node workloads against all the [“science goals”](#science-goals) to determine how the [“science goals”](#science-goals) are deployed to the Beehive nodes. When it is determined that a node's [“science goals”](#science-goals) are to be updated, the Edge Scheduler interfaces with [WES](#waggle-edge-stack-wes) running on those nodes to update the node's local copy of the [“science goals”](#science-goals). Essentially, the Edge Scheduler is the overseer of all the Beehive's nodes, deploying [“science goals”](#science-goals) to them to meet the scientists [plugin](#what-is-a-plugin) execution objectives.
 
 > Details & source code: https://github.com/waggle-sensor/edge-scheduler
 
@@ -151,7 +151,7 @@ The above diagram shows the basic technical configuration of a Waggle Blade Node
 
 > Details & source code: https://github.com/waggle-sensor/waggle-blade
 
-## Running Applications @ the Edge
+## Running plugins @ the Edge
 
 Included in the Waggle operating systems are the core components necessary to enable running [plugins](#what-is-a-plugin) @ the edge.  At the heart of this is [k3s](https://k3s.io/), which creates a protected & isolated run-time environment. This environment combined with the tools and services provided by [WES](#waggle-edge-stack-wes) enable [plugin](#what-is-a-plugin) access to the node's CPU, GPU, sensors and cameras.
 
@@ -176,4 +176,4 @@ Plugins are the user developed module that the Waggle cyberinfrastructure is des
 
 ### Science Goals
 
-A "science goal" is a rule-set for how and when [plugins](#what-is-a-plugin) are run on edge nodes. These "science goals" are created by scientist to accomplish a science objective through the execution of [plugins](#what-is-a-plugin) in a specific manner. Goals are created, in a human language, and managed within the Beehive [Edge Scheduler](#edge-scheduler-es). It is then the cyberinfrastucture responsibility to deploy the "science goals" to the edge nodes and execute the goal's [plugins](#what-is-a-plugins).
+A "science goal" is a rule-set for how and when [plugins](#what-is-a-plugin) are run on edge nodes. These "science goals" are created by scientist to accomplish a science objective through the execution of [plugins](#what-is-a-plugin) in a specific manner. Goals are created, in a human language, and managed within the Beehive [Edge Scheduler](#edge-scheduler-es). It is then the cyberinfrastucture responsibility to deploy the "science goals" to the edge nodes and execute the goal's [plugins](#what-is-a-plugins). The [tutorial](../tutorials/schedule-jobs.md) walks through running a science goal.

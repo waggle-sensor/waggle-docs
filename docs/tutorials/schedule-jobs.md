@@ -1,24 +1,26 @@
 ---
-sidebar_position: 5
+sidebar_position: 2
 ---
 
 # Submit your job
 
-Are you ready to deploy your plugins to measure the world? We will use [edge scheduler](../about/architecture.md#edge-scheduler-es) to submit a job to demonstrate how you can deploy plugins to field-deployed Waggle nodes.
+Are you ready to deploy your plugins to measure the world? We will use [edge scheduler](../about/architecture.md#edge-scheduler-es) to submit a job to demonstrate how you can deploy plugins to field-deployed Waggle nodes. 
 
 :::caution
-If you have not created your account, please go to [here](https://access.sagecontinuum.org) and log in to create a new account with your email. Once logged in, you will be able to create and edit your jobs, but will need a permission to submit jobs to the scheduler. Please contact us at [contact-us](../contact-us.md) to request the permission for job submission.
+If you have not created your account, please go to [access.sagecontinuum.org](https://access.sagecontinuum.org) and log in to create a new account with your email. Once logged in, you will be able to create and edit your jobs, but will need a permission to submit jobs to the scheduler. Please [contact-us](../contact-us.md) to request the job submission permission.
 :::
 
-A job describes,
-- plugins that are registered and built in [edge code repository](../about/architecture.md#edge-code-repository-ecr) with specification including any plugin arguments,
-- a list of Waggle nodes on which the plugins will be run,
+Jobs are an instance of a science goal. They detail what needs to be accomplished on Waggle nodes. A science goal may have multiple jobs to fill the missing data to answer scientific questions of the goal. A job describes,
+- [plugins](../about/architecture.md#what-is-a-plugin) that are registered and built in [edge code repository](../about/architecture.md#edge-code-repository-ecr) with specification including any plugin arguments,
+- a list of Waggle nodes on which the plugins will be scheduled and run,
 - science rules describing when the plugins should be scheduled,
 - conditions to determine when the job completes
 
+Creating and submitting jobs are an important step for successful science mission using Waggle nodes.
+
 ## Create a job
 
-We create a job in YAML format (JSON format is also supported. Please check out details of job attributes [here](https://github.com/waggle-sensor/edge-scheduler/tree/main/docs/sesctl).)
+We create a job file in YAML format (JSON format is also supported. Please check out [details of job attributes](https://github.com/waggle-sensor/edge-scheduler/tree/main/docs/sesctl).)
 
 ```bash
 cat << EOF > myjob.yaml
@@ -40,11 +42,11 @@ successcriteria:
 EOF
 ```
 
-We attempt to run a plugin named `image-sampler` to collect an image from the camera named `bottom` on `W030` node. As a result of the run, we will get images from the job. The job also specifies that the plugin needs to be scheduled every minute (i.e., `* * * * *` in [crontab expression](https://crontab.guru/)). The job completes 24 hours after the job started to run on the node.
+In this example, we want to run a plugin named `image-sampler` to collect an image from the camera named `bottom` on `W030` node. As a result of the job execution, we will get images from the node's camera. The job also specifies that the plugin needs to be scheduled every minute (i.e., `* * * * *` in [crontab expression](https://crontab.guru/)). The job completes 24 hours after the job started to run on the node.
 
-## Submit the job using _sesctl_
+## Upload your job to the scheduler
 
-`sesctl` is a command-line tool to manage jobs exist in the scheduler.
+`sesctl` is a command-line tool to manage jobs in the scheduler. You can download the latest version from our [Github repository](https://github.com/waggle-sensor/edge-scheduler/releases). Please make sure you download the tool supported for your machine. For example, on your desktop or laptop you would download amd64 version of the tool.
 
 :::note
 Users will need a token provided from [the access page](https://access.sagecontinuum.org). Click `View token` to receive your token. Then, replace the `<<user token>>` below with the received token.
@@ -60,10 +62,34 @@ sesctl ping
 }
 ```
 
+To create a job using the job file,
+
+```bash
+sesctl create --file-path myjob.yaml
+{
+ "job_id": "56",
+ "job_name": "myjob",
+ "status": "Created"
+}
+```
+
+To verify that we have uploaded the job,
+
+```bash
+sesctl stat
+JOB_ID  NAME                         USER       STATUS     AGE     
+====================================================================
+...
+56      myjob                        theone     Created    - 
+...
+```
+
+## Submit the job
+
 To submit the job,
 
 ```bash
-sesctl submit --file-path myjob.yaml
+sesctl submit --job-id 56
 {
  "job_id": "56",
  "status": "Submitted"
@@ -71,7 +97,7 @@ sesctl submit --file-path myjob.yaml
 ```
 
 :::note
-If you receive any error related to permission on nodes or scheduling, please contact us.
+You may receive a list of errors from the scheduler if the job cannot be validated. For instance, your account may not have scheduling permission on the node `W030`. Please consult with us for any error, especially errors related to scheduling permission on nodes in the job.
 :::
 
 ## Check status of job
@@ -92,9 +118,9 @@ Total number of nodes 1
 
 The job status can be also shown in [job status page](https://portal.sagecontinuum.org/job-status).
 
-## Access to data
+## [Access to data](./access-waggle-sensors.md)
 
-A few minutes later, the `W030` Waggle node would start collecting images by scheduling the plugin on the node. 
+A few minutes later, the `W030` Waggle node would start collecting images by scheduling the plugin on the node. Collected images are transferred to [Beehive](../about/architecture.md#beehive) for users to download.
 
 ```console
 curl -H 'Content-Type: application/json' https://data.sagecontinuum.org/api/v1/query -d '
@@ -108,3 +134,7 @@ curl -H 'Content-Type: application/json' https://data.sagecontinuum.org/api/v1/q
 }
 '
 ```
+
+## More tutorials using _sesctl_
+
+More tutorials can be found in our [Github repository](https://github.com/waggle-sensor/edge-scheduler/tree/main/docs/sesctl).
