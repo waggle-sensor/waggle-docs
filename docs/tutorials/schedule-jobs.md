@@ -7,7 +7,7 @@ sidebar_position: 2
 Are you ready to deploy your plugins to measure the world? We will use [edge scheduler](../about/architecture.md#edge-scheduler-es) to submit a job to demonstrate how you can deploy plugins to field-deployed Waggle nodes. 
 
 :::caution
-If you have not created your account, please go to [access.sagecontinuum.org](https://access.sagecontinuum.org) and log in to create a new account with your email. Once logged in, you will be able to create and edit your jobs, but will need a permission to submit jobs to the scheduler. Please [contact-us](../contact-us.md) to request the job submission permission.
+If you have not created your account, please go to [access.sagecontinuum.org](https://access.sagecontinuum.org) and log in to create a new account with your email. Once logged in, you will be able to create and edit your jobs, but will need a permission to submit jobs to the scheduler. Please [contact-us](../contact-us.md) to request for the job submission permission.
 :::
 
 Jobs are an instance of a science goal. They detail what needs to be accomplished on Waggle nodes. A science goal may have multiple jobs to fill the missing data to answer scientific questions of the goal. A job describes,
@@ -56,6 +56,10 @@ Users will need a token provided from [the access page](https://access.sageconti
 export SES_HOST=https://es.sagecontinuum.org
 export SES_USER_TOKEN=<<user token>>
 sesctl ping
+```
+
+You will get a response "pong" from the scheduler,
+```
 {
  "id": "Cloud Scheduler (cloudscheduler-sage)",
  "version": "0.16.7"
@@ -66,10 +70,14 @@ To create a job using the job file,
 
 ```bash
 sesctl create --file-path myjob.yaml
+```
+
+The scheduler will return a job id and the state for the job creation,
+```bash
 {
  "job_id": "56",
  "job_name": "myjob",
- "status": "Created"
+ "state": "Created"
 }
 ```
 
@@ -77,6 +85,10 @@ To verify that we have uploaded the job,
 
 ```bash
 sesctl stat
+```
+
+You will see the job entry from the response of the command,
+```bash
 JOB_ID  NAME                         USER       STATUS     AGE     
 ====================================================================
 ...
@@ -90,9 +102,13 @@ To submit the job,
 
 ```bash
 sesctl submit --job-id 56
+```
+
+The response should indicate that the job state is changed to "Submitted",
+```bash
 {
  "job_id": "56",
- "status": "Submitted"
+ "state": "Submitted"
 }
 ```
 
@@ -103,7 +119,11 @@ You may receive a list of errors from the scheduler if the job cannot be validat
 ## Check status of job
 
 ```bash
-sesctl stat --job 56
+sesctl stat --job-id 56
+```
+
+The tool will print details of the job,
+```bash
 ===== JOB STATUS =====
 Job ID: 56
 Job Name: myjob
