@@ -19,23 +19,23 @@ _NOTE: not all Waggle nodes have the same set of sensors, and the sensor configu
       <td><a href="https://sage-commons.sdsc.edu/dataset/bme680">BME680</a></td>
       <td>temperature, humidity, pressure, and gas</td>
       <td>
-        <a href="https://portal.sagecontinuum.org/data-browser?apps=plugin-iio.*&window=h">preview</a>
+        <a href="https://portal.sagecontinuum.org/query-browser?apps=waggle%2F.*plugin-iio.*%3A0.4.5&window=h">preview</a>
       </td>
     </tr>
     <tr>
       <td><a href="https://sage-commons.sdsc.edu/dataset/rg-15">RG-15</a></td>
       <td>rainfall</td>
-      <td><a href="https://portal.sagecontinuum.org/data-browser?apps=plugin-raingauge.*&window=h">preview</a></td>
+      <td><a href="https://portal.sagecontinuum.org/query-browser?apps=.*plugin-raingauge.*&window=h">preview</a></td>
     </tr>
     <tr>
       <td><a href="https://www.a1securitycameras.com/ets-ml1-ws.html">ETS ML1-WS</a></td>
       <td>20-16 kHz microphone recording sound</td>
-      <td><a href="https://portal.sagecontinuum.org/data-browser?apps=plugin-audio-sampler.*&window=h">preview</a></td>
+      <td><a href="https://portal.sagecontinuum.org/query-browser?type=audio&tasks=audiosampler&window=h">preview</a></td>
     </tr>
     <tr>
       <td><a href="https://www.a1securitycameras.com/ets-ml1-ws.html">ETS ML1-WS</a></td>
       <td>5 MP camera with 92.1 degree horizontal and 67.2 degree vertical angle view</td>
-      <td rowSpan="4"><a href="https://portal.sagecontinuum.org/data-browser?apps=plugin-image-sampler.*&window=h">preview</a></td>
+      <td rowSpan="4"><a href="https://portal.sagecontinuum.org/query-browser?type=images&tasks=imagesampler-.*&window=h&mimeType=image">preview</a></td>
     </tr>
       <tr>
       <td><a href="https://www.a1securitycameras.com/ets-ml1-ws.html">ETS ML1-WS</a></td>
