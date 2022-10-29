@@ -12,7 +12,7 @@ This tutorial will guide you in preparing your own Waggle device and (optionally
 
 To get started in boot-strapping your Waggle Edge Computing kit you can follow the instructions for the various supported platforms on the [node-platforms](https://github.com/waggle-sensor/node-platforms) GitHub page.
 
-> The currently only supported platform is the [NVidia nano](https://github.com/waggle-sensor/node-platforms/tree/main/nvidia-nano) but more platforms will be added in the future. In fact, if you would like to add support for other platforms go ahead and submit a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) to [node-platforms](https://github.com/waggle-sensor/node-platforms).
+> We currently support a limited set of hardware platform because making edge devices into Waggle requires some hardware specific instructions. Check out [the platforms](https://github.com/waggle-sensor/node-platforms#supported-platforms) we support as of now. More platforms will be added in the future. However, if you would like to add support for other platforms go ahead and submit a [pull request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) to [node-platforms](https://github.com/waggle-sensor/node-platforms).
 
 ### Registering your Waggle device
 
