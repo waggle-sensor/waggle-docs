@@ -162,6 +162,21 @@ curl -H 'Content-Type: application/json' https://data.sagecontinuum.org/api/v1/q
 '
 ```
 
+## Clean it up
+As we approach to the end of this tutorial, we need to clean up the job because otherwise it will be served forever. To remove the job from the scheduler,
+```bash
+# since the job is running, we remove the job forcefully
+sesctl rm --force 56
+```
+
+You should see output that looks like,
+```bash
+{
+ "job_id": "56",
+ "state": "Removed"
+}
+```
+
 ## More tutorials using _sesctl_
 
 More tutorials can be found in our [Github repository](https://github.com/waggle-sensor/edge-scheduler/tree/main/docs/sesctl).
