@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Submit your job
 
-Are you ready to deploy your plugins to measure the world? We will use [edge scheduler](../about/architecture.md#edge-scheduler-es) to submit a job to demonstrate how you can deploy plugins to field-deployed Waggle nodes. 
+Are you ready to deploy your plugins to measure the world? We will use [edge scheduler](../about/architecture.md#edge-scheduler-es) to submit a job and demonstrate how you can deploy plugins to field-deployed Waggle nodes. 
 
 :::caution
 If you have not created your account, please go to [access.sagecontinuum.org](https://access.sagecontinuum.org) and log in to create a new account with your email. Once logged in, you will be able to create and edit your jobs, but will need a permission to submit jobs to the scheduler. Please [contact-us](../contact-us.md) to request for the job submission permission.
@@ -13,8 +13,8 @@ If you have not created your account, please go to [access.sagecontinuum.org](ht
 Jobs are an instance of a science goal. They detail what needs to be accomplished on Waggle nodes. A science goal may have multiple jobs to fill the missing data to answer scientific questions of the goal. A job describes,
 - [plugins](../about/architecture.md#what-is-a-plugin) that are registered and built in [edge code repository](../about/architecture.md#edge-code-repository-ecr) with specification including any plugin arguments,
 - a list of Waggle nodes on which the plugins will be scheduled and run,
-- science rules describing when the plugins should be scheduled,
-- conditions to determine when the job completes
+- science rules describing a condition-action set that includes when the plugins should be scheduled,
+- conditions to determine when the job is considered as completed
 
 Creating and submitting jobs are an important step for successful science mission using Waggle nodes.
 
@@ -34,27 +34,36 @@ plugins:
     - -stream
     - bottom
 nodes:
-  W030:
+  W023:
 scienceRules:
-- "image-sampler: cronjob('image-sampler', '* * * * *')"
+- "schedule(image-sampler): cronjob('image-sampler', '* * * * *')"
 successcriteria:
 - WallClock(1d)
 EOF
 ```
 
-In this example, we want to run a plugin named `image-sampler` to collect an image from the camera named `bottom` on `W030` node. As a result of the job execution, we will get images from the node's camera. The job also specifies that the plugin needs to be scheduled every minute (i.e., `* * * * *` in [crontab expression](https://crontab.guru/)). The job completes 24 hours after the job started to run on the node.
+In this example, we want to schedule a plugin named `image-sampler` to collect an image from the camera named `bottom` on `W023` node. As a result of the job execution, we will get images from the node's camera. The job also specifies that the plugin needs to be scheduled every minute (i.e., `* * * * *` in [crontab expression](https://crontab.guru/)). The job completes 24 hours after the job started to run on the node.
+
+:::note
+We currently do not check job's success criteria. This means that once a job is submitted it is served forever. We will update our system to support different conditions for the success criteria attribute.
+:::
 
 ## Upload your job to the scheduler
 
-`sesctl` is a command-line tool to manage jobs in the scheduler. You can download the latest version from our [Github repository](https://github.com/waggle-sensor/edge-scheduler/releases). Please make sure you download the tool supported for your machine. For example, on your desktop or laptop you would download amd64 version of the tool.
+`sesctl` is a command-line tool to manage jobs in the scheduler. You can download the latest version from our [Github repository](https://github.com/waggle-sensor/edge-scheduler/releases). Please make sure you download the tool supported for your machine. For example, on Linux desktop or laptop you would download linux-amd64 version of the tool. Please see the [sesctl document](https://github.com/waggle-sensor/edge-scheduler/tree/main/docs/sesctl#readme) for more details.
 
 :::note
 Users will need a token provided from [the access page](https://access.sagecontinuum.org). Click `View token` to receive your token. Then, replace the `<<user token>>` below with the received token.
 :::
 
+You can set the SES host and user token as an environmental variable to your terminal. Please follow your shell's guidance to set them properly. In Bash shell,
 ```bash
 export SES_HOST=https://es.sagecontinuum.org
 export SES_USER_TOKEN=<<user token>>
+```
+
+Let's ping the scheduler in the cloud,
+```bash
 sesctl ping
 ```
 
@@ -62,12 +71,11 @@ You will get a response "pong" from the scheduler,
 ```
 {
  "id": "Cloud Scheduler (cloudscheduler-sage)",
- "version": "0.16.7"
+ "version": "0.18.0"
 }
 ```
 
 To create a job using the job file,
-
 ```bash
 sesctl create --file-path myjob.yaml
 ```
@@ -82,7 +90,6 @@ The scheduler will return a job id and the state for the job creation,
 ```
 
 To verify that we have uploaded the job,
-
 ```bash
 sesctl stat
 ```
@@ -113,11 +120,11 @@ The response should indicate that the job state is changed to "Submitted",
 ```
 
 :::note
-You may receive a list of errors from the scheduler if the job cannot be validated. For instance, your account may not have scheduling permission on the node `W030`. Please consult with us for any error, especially errors related to scheduling permission on nodes in the job.
+You may receive a list of errors from the scheduler if the job fails to be validated. For instance, your account may not have scheduling permission on the node `W023`. Please consult with us for any error, especially errors related to scheduling permission on nodes in the job.
 :::
 
-## Check status of job
-
+## Check status of jobs
+We check status of the job we submitted,
 ```bash
 sesctl stat --job-id 56
 ```
@@ -140,7 +147,7 @@ The job status can be also shown in [job status page](https://portal.sagecontinu
 
 ## [Access to data](./access-waggle-sensors.md)
 
-A few minutes later, the `W030` Waggle node would start collecting images by scheduling the plugin on the node. Collected images are transferred to [Beehive](../about/architecture.md#beehive) for users to download.
+A few minutes later, the `W023` Waggle node would start collecting images by scheduling the plugin on the node. Collected images are transferred to [Beehive](../about/architecture.md#beehive) for users to download.
 
 ```console
 curl -H 'Content-Type: application/json' https://data.sagecontinuum.org/api/v1/query -d '
@@ -148,8 +155,8 @@ curl -H 'Content-Type: application/json' https://data.sagecontinuum.org/api/v1/q
     "start": "-5m",
     "filter": {
         "task": "image-sampler",
-        "vsn": "W030",
-        "name": "upload",
+        "vsn": "W023",
+        "name": "upload"
     }
 }
 '
