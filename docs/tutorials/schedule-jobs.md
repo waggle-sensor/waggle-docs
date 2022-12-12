@@ -180,3 +180,6 @@ You should see output that looks like,
 ## More tutorials using _sesctl_
 
 More tutorials can be found in our [Github repository](https://github.com/waggle-sensor/edge-scheduler/tree/main/docs/sesctl).
+
+## Creating job description with advanced science rules for supporting realistic science mission
+The science rule used in the tutorial asked the scheduler to schedule the image sampler plugin every minute. For collecting training images from a set of Waggle nodes this makes total sense with the science rule. However, users in Waggle should want more complex behaviors at the node to not only schedule plugins, but enable cloud computation triggered by sending local events to the cloud. The events and triggers can be captured by creating science rules that monitor local sensor measurement on nodes. Please visit the [science rules](https://github.com/waggle-sensor/edge-scheduler/blob/main/docs/sciencerules/README.md) to know more complex science rules that user can create.
