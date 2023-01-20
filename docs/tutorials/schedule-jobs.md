@@ -7,7 +7,7 @@ sidebar_position: 2
 Are you ready to deploy your plugins to measure the world? We will use [edge scheduler](../about/architecture.md#edge-scheduler-es) to submit a job and demonstrate how you can deploy plugins to field-deployed Waggle nodes. 
 
 :::caution
-If you have not created your account, please go to [access.sagecontinuum.org](https://access.sagecontinuum.org) and log in to create a new account with your email. Once logged in, you will be able to create and edit your jobs, but will need a permission to submit jobs to the scheduler. Please [contact-us](../contact-us.md) to request for the job submission permission.
+If you have not created your account, please go to [https://portal.sagecontinuum.org/](https://portal.sagecontinuum.org/)](https://access.sagecontinuum.org) and sign in to create a new account with your email. Once signed in, you will be able to create and edit your jobs, but will need a permission to submit jobs to the scheduler. Please [contact-us](../contact-us.md) to request for the job submission permission.
 :::
 
 Jobs are an instance of a science goal. They detail what needs to be accomplished on Waggle nodes. A science goal may have multiple jobs to fill the missing data to answer scientific questions of the goal. A job describes,
@@ -53,7 +53,7 @@ We currently do not check job's success criteria. This means that once a job is 
 `sesctl` is a command-line tool to manage jobs in the scheduler. You can download the latest version from our [Github repository](https://github.com/waggle-sensor/edge-scheduler/releases). Please make sure you download the tool supported for your machine. For example, on Linux desktop or laptop you would download linux-amd64 version of the tool. Please see the [sesctl document](https://github.com/waggle-sensor/edge-scheduler/tree/main/docs/sesctl#readme) for more details.
 
 :::note
-Users will need a token provided from [the access page](https://access.sagecontinuum.org). Click `View token` to receive your token. Then, replace the `<<user token>>` below with the received token.
+Once you have [contacted us](../contact-us.md) for access permissions, you will need a token provided from [the access page](https://portal.sagecontinuum.org/account/access). Replace the `<<user token>>` below with the access token provided on this page.
 :::
 
 You can set the SES host and user token as an environmental variable to your terminal. Please follow your shell's guidance to set them properly. In Bash shell,
