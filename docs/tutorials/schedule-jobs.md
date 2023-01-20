@@ -7,7 +7,7 @@ sidebar_position: 2
 Are you ready to deploy your plugins to measure the world? We will use [edge scheduler](../about/architecture.md#edge-scheduler-es) to submit a job and demonstrate how you can deploy plugins to field-deployed Waggle nodes. 
 
 :::caution
-If you have not created your account, please go to [https://portal.sagecontinuum.org/](https://portal.sagecontinuum.org/)](https://access.sagecontinuum.org) and sign in to create a new account with your email. Once signed in, you will be able to create and edit your jobs, but will need a permission to submit jobs to the scheduler. Please [contact-us](../contact-us.md) to request for the job submission permission.
+If you have not created your account, please go to [https://portal.sagecontinuum.org/](https://portal.sagecontinuum.org/) and sign in to create a new account with your email. Once signed in, you will be able to create and edit your jobs, but will need a permission to submit jobs to the scheduler. Please [contact-us](../contact-us.md) to request for the job submission permission.
 :::
 
 Jobs are an instance of a science goal. They detail what needs to be accomplished on Waggle nodes. A science goal may have multiple jobs to fill the missing data to answer scientific questions of the goal. A job describes,
