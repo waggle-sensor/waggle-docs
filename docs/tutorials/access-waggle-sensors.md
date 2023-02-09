@@ -16,61 +16,50 @@ _NOTE: not all Waggle nodes have the same set of sensors, and the sensor configu
 <table className="full-width">
   <tbody>
     <tr>
-      <td><a href="https://sage-commons.sdsc.edu/dataset/bme680">BME680</a></td>
+      <td><a href="https://portal.sagecontinuum.org/sensors/bme680">BME680</a></td>
       <td>temperature, humidity, pressure, and gas</td>
       <td>
-        <a href="https://portal.sagecontinuum.org/query-browser?apps=waggle%2F.*plugin-iio.*%3A0.4.5&window=h">preview</a>
+        <a href="https://portal.sagecontinuum.org/query-browser?type=names&names=env.temperature&window=h">preview</a>
       </td>
     </tr>
     <tr>
-      <td><a href="https://sage-commons.sdsc.edu/dataset/rg-15">RG-15</a></td>
+      <td><a href="https://portal.sagecontinuum.org/sensors/rg-15">RG-15</a></td>
       <td>rainfall</td>
       <td><a href="https://portal.sagecontinuum.org/query-browser?apps=.*plugin-raingauge.*&window=h">preview</a></td>
     </tr>
     <tr>
-      <td><a href="https://www.a1securitycameras.com/ets-ml1-ws.html">ETS ML1-WS</a></td>
+      <td><a href="https://portal.sagecontinuum.org/sensors/ml1-ws-ip54">ETS ML1-WS</a></td>
       <td>20-16 kHz microphone recording sound</td>
       <td><a href="https://portal.sagecontinuum.org/query-browser?type=audio&tasks=audiosampler&window=h">preview</a></td>
     </tr>
     <tr>
-      <td><a href="https://www.a1securitycameras.com/ets-ml1-ws.html">ETS ML1-WS</a></td>
+      <td><a href="https://portal.sagecontinuum.org/sensors/xnv-8080r">XNV-8080R</a></td>
       <td>5 MP camera with 92.1 degree horizontal and 67.2 degree vertical angle view</td>
       <td rowSpan="4"><a href="https://portal.sagecontinuum.org/query-browser?type=images&tasks=imagesampler-.*&window=h&mimeType=image">preview</a></td>
     </tr>
       <tr>
-      <td><a href="https://www.a1securitycameras.com/ets-ml1-ws.html">ETS ML1-WS</a></td>
+      <td><a href="https://portal.sagecontinuum.org/sensors/xnv-8082r">XNV-8082R</a></td>
       <td>6 MP camera with 114 degree horizontal and 62 degree vertical angle view</td>
     </tr>
       <tr>
-      <td><a href="https://www.a1securitycameras.com/ets-ml1-ws.html">ETS ML1-WS</a></td>
+      <td><a href="https://portal.sagecontinuum.org/sensors/xnf-8010rv">XNF-8010RV</a></td>
       <td>6 MP fisheye camera with 192 degree horizontal and vertical angle view</td>
     </tr>
     <tr>
-      <td><a href="https://www.a1securitycameras.com/ets-ml1-ws.html">ETS ML1-WS</a></td>
+      <td><a href="https://portal.sagecontinuum.org/sensors/xnv-8081z">XNV-8081Z</a></td>
       <td>5 MP digital pan-tilt-rotate-zoom camera</td>
     </tr>
   </tbody>
 </table>
 
-<!-- we might want to switch back to a list when there is camera filtering in data preview?
-- [BME680](https://sage-commons.sdsc.edu/dataset/bme680): temperature, humidity, pressure, and gas ()
-- [RG-15](https://sage-commons.sdsc.edu/dataset/rg-15): rainfall
-- [ETS ML1-WS](https://www.a1securitycameras.com/ets-ml1-ws.html): 20-16 kHz microphone recording sound
-- [XNV-8080R](https://sage-commons.sdsc.edu/dataset/xnv-8080r): 5 MP camera with 92.1 degree horizontal and 67.2 degree vertical angle view
-- [XNV-8082R](https://sage-commons.sdsc.edu/dataset/xnv-8082r):  6 MP camera with 114 degree horizontal and 62 degree vertical angle view
-- [XNF-8010RV](https://sage-commons.sdsc.edu/dataset/xnf-8010rv): 6 MP fisheye camera with 192 degree horizontal and vertical angle view
-- [XNV-8081Z](https://sage-commons.sdsc.edu/dataset/xnv-8081z): 5 MP digital pan-tilt-rotate-zoom camera
--->
+Any collaborators and user communities can bring up their sensors to Waggle node. The node can easily host sensor devices that support serial interface as well as network interface (e.g., http, rtsp, etc). Other currently supported user sensors include:
 
-Any collaborators and user communities can bring up their sensors to Waggle node. The node can easily host sensor devices that support serial interface as well as network interface (e.g., http, rtsp, etc). The currently supported user sensors are,
-
-_NOTE: those sensors may not be available on all Waggle nodes as it depends on what Waggle nodes need to host them_
 - Software-defined Radio: detecting raindrops and snow flakes
 - Radiation detector: radiation detector
 - LIDAR: distance of nearby objects
-- Mobotics: infrared camera
+- Mobotix: infrared camera
 
-_TODO: add links for the user sensors and also link where users find detailed resource to add their sensor to Waggle_
+[[view more...](https://portal.sagecontinuum.org/sensors)]
 
 ## Waggle software-defined sensors
 Software-defined sensors are limitless as edge applications define them. You can start building your edge application that publishes outputs using [PyWaggle's basic example](https://github.com/waggle-sensor/pywaggle/blob/main/docs/writing-a-plugin.md#basic-example) that can become a software-defined sensor. Later, such outputs can be consumed by other edge applications to produce higher level information about the measurements. A few example of Waggle software-defined sensors are,
