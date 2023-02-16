@@ -64,8 +64,8 @@ Any collaborators and user communities can bring up their sensors to Waggle node
 ## Waggle software-defined sensors
 Software-defined sensors are limitless as edge applications define them. You can start building your edge application that publishes outputs using [PyWaggle's basic example](https://github.com/waggle-sensor/pywaggle/blob/main/docs/writing-a-plugin.md#basic-example) that can become a software-defined sensor. Later, such outputs can be consumed by other edge applications to produce higher level information about the measurements. A few example of Waggle software-defined sensors are,
 
-- [Object Counter](https://portal.sagecontinuum.org/apps/app/theone/objcounter): `env.count.OBJECT` counts objects from an image, where `OBJECT` is the object name that is recognized
-- [Cloud Coverage Estimator](https://portal.sagecontinuum.org/apps/app/seonghapark/cloudcover-unet): `env.coverage.cloud` provides a percentage of cloud covered in an image
+- [Object Counter](https://portal.sagecontinuum.org/apps/app/yonghokim/object-counter): `env.count.OBJECT` counts objects from an image, where `OBJECT` is the object name that is recognized
+- [Cloud Coverage Estimator](https://portal.sagecontinuum.org/apps/app/seonghapark/cloud-cover): `env.coverage.cloud` provides a percentage of cloud covered in an image
 
 ## Access to Waggle sensors
 ![Figure 2: Access to Waggle sensors](./images/access_to_sensors.svg)
