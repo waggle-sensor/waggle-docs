@@ -32,7 +32,7 @@ plugins:
     image: registry.sagecontinuum.org/theone/imagesampler:0.3.0
     args:
     - -stream
-    - bottom
+    - bottom_camera
 nodes:
   W023:
 scienceRules:
@@ -42,7 +42,11 @@ successcriteria:
 EOF
 ```
 
-In this example, we want to schedule a plugin named `image-sampler` to collect an image from the camera named `bottom` on `W023` node. As a result of the job execution, we will get images from the node's camera. The job also specifies that the plugin needs to be scheduled every minute (i.e., `* * * * *` in [crontab expression](https://crontab.guru/)). The job completes 24 hours after the job started to run on the node.
+In this example, we want to schedule a plugin named `image-sampler` to collect an image from the camera named `bottom_camera` on `W023` node. As a result of the job execution, we will get images from the node's camera. The job also specifies that the plugin needs to be scheduled every minute (i.e., `* * * * *` in [crontab expression](https://crontab.guru/)). The job completes 24 hours after the job started to run on the node.
+
+:::info
+We support human-friendly names for the sensors we host. The "bottom_camear" is named based on the orientation the camera is attached to the node. The full list of sensors including cameras for the `W023` node can be found [here](https://auth.sagecontinuum.org/manifests/w023/)
+:::
 
 :::note
 We currently do not check job's success criteria. This means that once a job is submitted it is served forever. We will update our system to support different conditions for the success criteria attribute.
