@@ -1,44 +1,4 @@
-# Waggle Documentation and Tutorials
 
+### _This repo is currently unused/archived and might be removed._
 
-## Writing Docs
-
-* [The Format of a Tutorial/Doc](./writing-docs/doc-format.md)
-* [Using Markdown](./writing-docs/using-markdown.md)
-
-
-## Updating Docs
-
-* [Editing a Page](./writing-docs/updating-docs.md)
-
-
-## Local Development
-
-Clone this repo.
-
-Install deps:
-```console
-npm install
-```
-
-Start the local dev environment:
-
-```console
-npm start
-```
-
-## Build
-
-Generate static content into the `build` directory:
-
-```console
-npm run build
-```
-
-## GitHub Pages Deploy
-
-GIT_USER=<GITHUB_USERNAME> npm run deploy
-
-
-
-
+### Waggle node and related documentation is part of the Sage website [repo](https://github.com/waggle-sensor/sage-website), which is served at [https://sagecontinuum.org](https://sagecontinuum.org). 
